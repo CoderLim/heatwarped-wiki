@@ -30,15 +30,15 @@ export function MiniWarsHeader({
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1.5">
               <span className="animate-blink bg-signal-500 h-1.5 w-1.5 rounded-full" />
-              <span>SIGNAL · LIVE</span>
+              <span>HEATWARPED · LIVE</span>
             </span>
             <span className="text-bunker-500 hidden sm:inline">//</span>
-            <span className="hidden sm:inline">COUNTRY OPS · ROBLOX</span>
+            <span className="hidden sm:inline">OPEN-WORLD STREET RACING</span>
           </div>
           <div className="hidden items-center gap-3 md:flex">
-            <span>LIVE BUILD</span>
+            <span>DEMO AVAILABLE</span>
             <span className="text-bunker-500">//</span>
-            <span>UNOFFICIAL CODEX</span>
+            <span>UNOFFICIAL WIKI</span>
           </div>
         </div>
       </div>
@@ -51,10 +51,10 @@ export function MiniWarsHeader({
           </div>
           <div className="leading-none">
             <div className="font-display text-sand-100 text-xl tracking-[0.2em] uppercase">
-              Mini War
+              Heatwarped
             </div>
             <div className="text-camo-400 font-mono text-[10px] tracking-[0.3em] uppercase">
-              · Combat Codex ·
+              · Street Racing Wiki ·
             </div>
           </div>
         </Link>
