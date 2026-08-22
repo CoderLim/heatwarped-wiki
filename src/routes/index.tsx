@@ -1,12 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { miniWarsPageRouteOptions } from '@/components/miniwars/mini-wars-page-route';
-import { HomePage } from '@/components/miniwars/pages';
+import { heatwarpedPageRouteOptions } from '@/components/heatwarped/page-route';
+import { HomePage } from '@/components/heatwarped/pages/home-page';
 
 export const Route = createFileRoute('/')(
-  miniWarsPageRouteOptions({
+  heatwarpedPageRouteOptions({
     path: '/',
-    key: 'home',
+    title: 'Heatwarped Wiki: Cars, Demo, Release Date & Guides',
+    description:
+      'Heatwarped Wiki covering the official demo, cars, customization, release date, PC requirements, Ratfield and verified guides with first-party sources.',
     Page: HomePage,
   })
 );
