@@ -1,0 +1,11 @@
+export { HomePage } from './home-page';
+export { BuildingsPage } from './buildings-page';
+export { StrategyPage } from './strategy-page';
+export { SystemsPage } from './systems-page';
+export { TierListPage } from './tier-list-page';
+export { GuidesPage } from './guides-page';
+export { CodesPage } from './codes-page';
+export { NewsPage } from './news-page';
+export { PatchNotesPage } from './patch-notes-page';
+export { FaqPage } from './faq-page';
+export { SearchPage } from './search-page';

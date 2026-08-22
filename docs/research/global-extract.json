@@ -1,0 +1,333 @@
+{
+  "viewport": {
+    "w": 1440,
+    "h": 900,
+    "scrollH": 5554
+  },
+  "bodyBg": "rgb(10, 12, 10)",
+  "bodyFont": "Rajdhani, system-ui, sans-serif, system-ui, sans-serif",
+  "bodyColor": "rgb(227, 230, 221)",
+  "cssVars": {
+    "--font-display": "\"Black Ops One\",\"Impact\",sans-serif",
+    "--font-mono": "\"JetBrains Mono\",ui-monospace,monospace",
+    "--font-sans": "\"Rajdhani\",system-ui,sans-serif"
+  },
+  "fontLinks": [
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/3d26d2f3aa81a833-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/4b657decd6407698-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/558ca1a6aa3cb55e-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/6e1768769e6f59a2-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/ab2e3a11646b0499-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/d9df7be9880a78d0-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/fde3a382437abbbd-s.p.woff2",
+      "as": "font"
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://miniwars.art/_next/static/css/21fc30eab93d1123.css",
+      "as": ""
+    },
+    {
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/chunks/webpack-a6b80ff0d5cc95a8.js",
+      "as": "script"
+    },
+    {
+      "rel": "manifest",
+      "href": "https://miniwars.art/manifest.webmanifest",
+      "as": ""
+    },
+    {
+      "rel": "icon",
+      "href": "https://miniwars.art/favicon.svg",
+      "as": ""
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miniwars.art/favicon.svg",
+      "as": ""
+    }
+  ],
+  "fonts": [
+    "Rajdhani, system-ui, sans-serif, system-ui, sans-serif",
+    "\"JetBrains Mono\", ui-monospace, monospace, ui-monospace, SFMono-Regular, monospace",
+    "\"Black Ops One\", Impact, sans-serif, Impact, sans-serif"
+  ],
+  "colors": [
+    "rgb(227, 230, 221)",
+    "rgba(16, 20, 16, 0.7)",
+    "rgb(168, 187, 131)",
+    "rgb(61, 212, 164)",
+    "rgb(74, 84, 72)",
+    "rgb(16, 20, 16)",
+    "rgba(232, 93, 58, 0)",
+    "rgb(243, 234, 212)",
+    "rgb(132, 156, 91)",
+    "rgb(196, 203, 185)",
+    "rgb(205, 217, 180)",
+    "rgba(232, 93, 58, 0.15)",
+    "rgb(232, 93, 58)",
+    "rgb(10, 12, 10)",
+    "rgba(10, 12, 10, 0.6)",
+    "rgb(255, 106, 58)",
+    "rgba(16, 20, 16, 0.4)",
+    "rgb(114, 123, 103)",
+    "rgb(154, 164, 141)",
+    "rgba(232, 93, 58, 0.1)"
+  ],
+  "favicons": [
+    {
+      "tag": "LINK",
+      "rel": "manifest",
+      "href": "https://miniwars.art/manifest.webmanifest",
+      "property": null,
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "Mini Wars Wiki \u2014 Roblox Country Conquest Codex",
+      "property": "og:title",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "Unofficial strategy codex for Mini Wars on Roblox by Horangi99. Buildings, country strategies, game systems, tier lists, codes, patch notes, and high-impact playbooks for the country-conquest meta.",
+      "property": "og:description",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "https://miniwars.art",
+      "property": "og:url",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "Mini Wars Wiki",
+      "property": "og:site_name",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "en_US",
+      "property": "og:locale",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "https://miniwars.art/og-default.svg",
+      "property": "og:image",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "1200",
+      "property": "og:image:width",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "630",
+      "property": "og:image:height",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "Mini Wars Wiki \u2014 Roblox Country Conquest Codex",
+      "property": "og:image:alt",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "image/svg+xml",
+      "property": "og:image:type",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "META",
+      "rel": null,
+      "href": "website",
+      "property": "og:type",
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "LINK",
+      "rel": "icon",
+      "href": "https://miniwars.art/favicon.svg",
+      "property": null,
+      "name": null,
+      "sizes": null
+    },
+    {
+      "tag": "LINK",
+      "rel": "apple-touch-icon",
+      "href": "https://miniwars.art/favicon.svg",
+      "property": null,
+      "name": null,
+      "sizes": null
+    }
+  ],
+  "lenis": false,
+  "headerClasses": "sticky top-0 z-50 border-b border-camo-800/70 bg-bunker-950/85 backdrop-blur-md",
+  "footerClasses": "relative z-10 mt-24 border-t border-camo-900 bg-bunker-950/95",
+  "sections": [
+    {
+      "i": 0,
+      "tag": "script",
+      "id": null,
+      "classes": "",
+      "top": 0,
+      "height": 0,
+      "heading": "",
+      "textPreview": "[{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Mini Wars Wiki\",\"alternateName\":\"Mini War Wiki\",\"url\":\"https"
+    },
+    {
+      "i": 1,
+      "tag": "section",
+      "id": null,
+      "classes": "relative overflow-hidden border-b border-camo-900",
+      "top": 91,
+      "height": 730,
+      "heading": "BUILD A COUNTRY.\nCRUSH YOUR NEIGHBORS.",
+      "textPreview": "LIVE BUILD \u00b7 LIVE BUILD \u00b7 MAY 2026 | // | ROBLOX \u00b7 MINI WAR | BUILD A COUNTRY. | CRUSH YOUR NEIGHBORS. |  | The unofficial strategy "
+    },
+    {
+      "i": 2,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16 border-b border-camo-900/60",
+      "top": 821,
+      "height": 474,
+      "heading": "WHAT IS MINI WARS?",
+      "textPreview": "ABOUT THIS WIKI | WHAT IS MINI WARS? |  | Mini Wars is a country-conquest tycoon experience on Roblox, developed by Horangi99."
+    },
+    {
+      "i": 3,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16",
+      "top": 1294,
+      "height": 428,
+      "heading": "CHOOSE YOUR DOCTRINE",
+      "textPreview": "FIELD MANUAL | CHOOSE YOUR DOCTRINE | BUILDINGS | 21 structures, ranked & explained | STRATEGIES | 7 battle-tested build orders | SY"
+    },
+    {
+      "i": 4,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16 border-y border-camo-900/70 bg-bunker-950/30",
+      "top": 1722,
+      "height": 551,
+      "heading": "TOP STRATEGIES",
+      "textPreview": "DOCTRINE | TOP STRATEGIES | VIEW ALL | ECONOMY FIRST | ECONOMY FIRST \u00b7 BEGINNER | AIR RUSH \u00b7 BLACK HAWK STRIKE | MILITARY RUSH \u00b7 INT"
+    },
+    {
+      "i": 5,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16",
+      "top": 2273,
+      "height": 460,
+      "heading": "BUILDINGS YOU CANNOT SKIP",
+      "textPreview": "MANDATORY PICKS | BUILDINGS YOU CANNOT SKIP | ALL BUILDINGS | INF-01 \u00b7 EARLY | WORKSHOP | S |  | Each Workshop adds a builder to your "
+    },
+    {
+      "i": 6,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16 border-t border-camo-900/70 bg-bunker-950/30",
+      "top": 2733,
+      "height": 488,
+      "heading": "FEATURED STRATEGIES",
+      "textPreview": "BATTLE PLANS | FEATURED STRATEGIES | ALL STRATEGIES | ECONOMY FIRST | ECONOMY FIRST |  | The path of least resistance and the highes"
+    },
+    {
+      "i": 7,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16 border-t border-camo-900/70",
+      "top": 3221,
+      "height": 439,
+      "heading": "LATEST MINI WARS NEWS",
+      "textPreview": "SIGNAL \u00b7 LIVE FEED | LATEST MINI WARS NEWS | ALL NEWS | PATCH | MAY 06, 2026 | MINI WARS MAY 2026 LIVE BUILD RECAP \u2014 BUNKER LANDS "
+    },
+    {
+      "i": 8,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16",
+      "top": 3660,
+      "height": 438,
+      "heading": "LATEST GUIDES",
+      "textPreview": "FIELD REPORTS | LATEST GUIDES | ALL GUIDES | BEGINNER | MAY 06, 2026 | BEGINNER OPENING GUIDE: YOUR FIRST 10 MINUTES |  | A step-by-st"
+    },
+    {
+      "i": 9,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16 border-t border-camo-900/70 bg-bunker-950/30",
+      "top": 4098,
+      "height": 678,
+      "heading": "THE MINI WARS ROBLOX GUIDE BUILT FOR THE CURRENT META",
+      "textPreview": "WHY THIS WIKI EXISTS | THE MINI WARS ROBLOX GUIDE BUILT FOR THE CURRENT META |  | Most Mini Wars wikis on Google are stale wit"
+    },
+    {
+      "i": 10,
+      "tag": "section",
+      "id": null,
+      "classes": "relative py-16",
+      "top": 4775,
+      "height": 370,
+      "heading": "NEW TO MINI WARS?",
+      "textPreview": "RECRUIT \u00b7 STEP 01 | NEW TO MINI WARS? |  | Start with the Beginner Opening Guide. The right buildings, in the right order, bef"
+    }
+  ]
+}

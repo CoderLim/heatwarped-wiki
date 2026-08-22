@@ -1,0 +1,334 @@
+{
+  "outline": [
+    {
+      "depth": 0,
+      "tag": "body",
+      "id": "",
+      "role": null,
+      "cls": "min-h-screen flex flex-col",
+      "heading": "",
+      "h": 5554
+    },
+    {
+      "depth": 1,
+      "tag": "div",
+      "id": "",
+      "role": null,
+      "cls": "pointer-events-none fixed inset-0 z-0 grid-bg opacity-40",
+      "heading": "",
+      "h": 900
+    },
+    {
+      "depth": 1,
+      "tag": "div",
+      "id": "",
+      "role": null,
+      "cls": "pointer-events-none fixed inset-0 z-0 scanlines opacity-30",
+      "heading": "",
+      "h": 900
+    },
+    {
+      "depth": 1,
+      "tag": "header",
+      "id": "",
+      "role": null,
+      "cls": "sticky top-0 z-50 border-b border-camo-800/70 bg-bunker-950/85 backdrop-blur-md",
+      "heading": "",
+      "h": 91
+    },
+    {
+      "depth": 2,
+      "tag": "div",
+      "id": "",
+      "role": null,
+      "cls": "border-b border-camo-900/80 bg-bunker-900/70",
+      "heading": "",
+      "h": 26
+    },
+    {
+      "depth": 2,
+      "tag": "div",
+      "id": "",
+      "role": null,
+      "cls": "mx-auto flex max-w-7xl items-center justify-between px-4 py-3",
+      "heading": "",
+      "h": 64
+    },
+    {
+      "depth": 3,
+      "tag": "nav",
+      "id": "",
+      "role": null,
+      "cls": "hidden lg:flex items-center gap-1",
+      "heading": "",
+      "h": 36
+    },
+    {
+      "depth": 1,
+      "tag": "main",
+      "id": "",
+      "role": null,
+      "cls": "relative z-10 flex-1",
+      "heading": "",
+      "h": 5055
+    },
+    {
+      "depth": 2,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative overflow-hidden border-b border-camo-900",
+      "heading": "",
+      "h": 730
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16 border-b border-camo-900/60",
+      "heading": "",
+      "h": 474
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16",
+      "heading": "",
+      "h": 428
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16 border-y border-camo-900/70 bg-bunker-950/30",
+      "heading": "",
+      "h": 551
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16",
+      "heading": "",
+      "h": 460
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16 border-t border-camo-900/70 bg-bunker-950/30",
+      "heading": "",
+      "h": 488
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16 border-t border-camo-900/70",
+      "heading": "",
+      "h": 439
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16",
+      "heading": "",
+      "h": 438
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16 border-t border-camo-900/70 bg-bunker-950/30",
+      "heading": "",
+      "h": 678
+    },
+    {
+      "depth": 2,
+      "tag": "section",
+      "id": "",
+      "role": null,
+      "cls": "relative py-16",
+      "heading": "",
+      "h": 370
+    },
+    {
+      "depth": 1,
+      "tag": "footer",
+      "id": "",
+      "role": null,
+      "cls": "relative z-10 mt-24 border-t border-camo-900 bg-bunker-950/95",
+      "heading": "",
+      "h": 313
+    },
+    {
+      "depth": 2,
+      "tag": "div",
+      "id": "",
+      "role": null,
+      "cls": "stencil-line",
+      "heading": "",
+      "h": 2
+    },
+    {
+      "depth": 2,
+      "tag": "div",
+      "id": "",
+      "role": null,
+      "cls": "mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-4",
+      "heading": "",
+      "h": 260
+    },
+    {
+      "depth": 2,
+      "tag": "div",
+      "id": "",
+      "role": null,
+      "cls": "border-t border-camo-900/80",
+      "heading": "",
+      "h": 50
+    },
+    {
+      "depth": 1,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 1,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 1,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 1,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 1,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 1,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 1,
+      "tag": "script",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    },
+    {
+      "depth": 1,
+      "tag": "next-route-announcer",
+      "id": "",
+      "role": null,
+      "cls": "",
+      "heading": "",
+      "h": 0
+    }
+  ],
+  "interactive": {
+    "buttons": 1,
+    "links": 82,
+    "dialogs": 0
+  },
+  "navLinks": [
+    {
+      "text": "MINI WAR\n\u00b7 COMBAT CODEX \u00b7",
+      "href": "/"
+    },
+    {
+      "text": "BUILDINGS",
+      "href": "/buildings"
+    },
+    {
+      "text": "STRATEGY",
+      "href": "/strategy"
+    },
+    {
+      "text": "SYSTEMS",
+      "href": "/systems"
+    },
+    {
+      "text": "TIER LIST",
+      "href": "/tier-list"
+    },
+    {
+      "text": "GUIDES",
+      "href": "/guides"
+    },
+    {
+      "text": "CODES",
+      "href": "/codes"
+    },
+    {
+      "text": "NEWS",
+      "href": "/news"
+    },
+    {
+      "text": "PATCH",
+      "href": "/patch-notes"
+    },
+    {
+      "text": "FAQ",
+      "href": "/faq"
+    },
+    {
+      "text": "SEARCH",
+      "href": "/search"
+    }
+  ]
+}

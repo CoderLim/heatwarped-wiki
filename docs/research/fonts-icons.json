@@ -1,0 +1,358 @@
+{
+  "fontLinks": [
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/3d26d2f3aa81a833-s.p.woff2"
+    },
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/4b657decd6407698-s.p.woff2"
+    },
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/558ca1a6aa3cb55e-s.p.woff2"
+    },
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/6e1768769e6f59a2-s.p.woff2"
+    },
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/ab2e3a11646b0499-s.p.woff2"
+    },
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/d9df7be9880a78d0-s.p.woff2"
+    },
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/media/fde3a382437abbbd-s.p.woff2"
+    },
+    {
+      "t": "link",
+      "rel": "stylesheet",
+      "href": "https://miniwars.art/_next/static/css/21fc30eab93d1123.css"
+    },
+    {
+      "t": "link",
+      "rel": "preload",
+      "href": "https://miniwars.art/_next/static/chunks/webpack-a6b80ff0d5cc95a8.js"
+    },
+    {
+      "t": "link",
+      "rel": "manifest",
+      "href": "https://miniwars.art/manifest.webmanifest"
+    },
+    {
+      "t": "link",
+      "rel": "canonical",
+      "href": "https://miniwars.art/"
+    },
+    {
+      "t": "link",
+      "rel": "alternate",
+      "href": "https://miniwars.art/rss.xml"
+    },
+    {
+      "t": "link",
+      "rel": "icon",
+      "href": "https://miniwars.art/favicon.svg"
+    },
+    {
+      "t": "link",
+      "rel": "apple-touch-icon",
+      "href": "https://miniwars.art/favicon.svg"
+    }
+  ],
+  "solids": {
+    "bg-camo-600": "rgba(0, 0, 0, 0)",
+    "bg-camo-400": "rgba(0, 0, 0, 0)",
+    "bg-ember-600": "rgba(0, 0, 0, 0)",
+    "bg-ember-700": "rgba(0, 0, 0, 0)",
+    "bg-signal-600": "rgba(0, 0, 0, 0)",
+    "bg-sand-500": "rgba(0, 0, 0, 0)",
+    "bg-bunker-50": "rgba(0, 0, 0, 0)",
+    "text-camo-100": "rgb(227, 230, 221)",
+    "bg-camo-100": "rgba(0, 0, 0, 0)"
+  },
+  "logoHTML": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-crosshair h-5 w-5 text-ember-500 transition-transform group-hover:rotate-90\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"22\" x2=\"18\" y1=\"12\" y2=\"12\"></line><line x1=\"6\" x2=\"2\" y1=\"12\" y2=\"12\"></line><line x1=\"12\" x2=\"12\" y1=\"6\" y2=\"2\"></line><line x1=\"12\" x2=\"12\" y1=\"22\" y2=\"18\"></line></svg>",
+  "icons": [
+    {
+      "i": 0,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crosshair h-5 w-5 text-ember-500 transition-transform group-hover:",
+      "paths": 5,
+      "parent": "relative flex h-10 w-10 items-center justify-center border b",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 1,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-search h-4 w-4",
+      "paths": 2,
+      "parent": "group flex h-10 items-center gap-2 border border-camo-700 bg",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 2,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-menu h-5 w-5",
+      "paths": 3,
+      "parent": "lg:hidden flex h-10 w-10 items-center justify-center border ",
+      "w": 0,
+      "h": 0
+    },
+    {
+      "i": 3,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-radio h-3.5 w-3.5 animate-blink",
+      "paths": 5,
+      "parent": "font-mono text-xs uppercase tracking-[0.4em] text-ember-500 ",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "i": 4,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-arrow-right h-4 w-4",
+      "paths": 2,
+      "parent": "btn-tactical",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 5,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-building h-4 w-4",
+      "paths": 11,
+      "parent": "btn-ghost",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 6,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crosshair h-4 w-4 text-camo-500 group-hover:text-ember-500",
+      "paths": 5,
+      "parent": "group flex items-center gap-3 border border-camo-800/60 bg-b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 7,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crosshair h-4 w-4 text-camo-500 group-hover:text-ember-500",
+      "paths": 5,
+      "parent": "group flex items-center gap-3 border border-camo-800/60 bg-b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 8,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crosshair h-4 w-4 text-camo-500 group-hover:text-ember-500",
+      "paths": 5,
+      "parent": "group flex items-center gap-3 border border-camo-800/60 bg-b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 9,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crosshair h-4 w-4 text-camo-500 group-hover:text-ember-500",
+      "paths": 5,
+      "parent": "group flex items-center gap-3 border border-camo-800/60 bg-b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 10,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-arrow-right h-3.5 w-3.5",
+      "paths": 2,
+      "parent": "mt-4 flex items-center justify-center gap-1.5 border-t borde",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "i": 11,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-building h-5 w-5",
+      "paths": 11,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 12,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-flag h-5 w-5",
+      "paths": 2,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 13,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-cpu h-5 w-5",
+      "paths": 10,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 14,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-trophy h-5 w-5",
+      "paths": 6,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 15,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-scroll-text h-5 w-5",
+      "paths": 4,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 16,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-key-round h-5 w-5",
+      "paths": 2,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 17,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-file-text h-5 w-5",
+      "paths": 5,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 18,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-circle-help h-5 w-5",
+      "paths": 3,
+      "parent": "flex h-10 w-10 items-center justify-center border clip-corne",
+      "w": 20,
+      "h": 20
+    },
+    {
+      "i": 19,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-arrow-up-right h-3.5 w-3.5 transition-transform group-hover:transl",
+      "paths": 2,
+      "parent": "group flex items-center gap-1.5 font-mono text-xs uppercase ",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "i": 20,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-flag h-4 w-4 text-ember-500 shrink-0",
+      "paths": 2,
+      "parent": "hud-frame clip-corner-sm p-3 flex items-center justify-betwe",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 21,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-flag h-4 w-4 text-ember-500 shrink-0",
+      "paths": 2,
+      "parent": "hud-frame clip-corner-sm p-3 flex items-center justify-betwe",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 22,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-flag h-4 w-4 text-ember-500 shrink-0",
+      "paths": 2,
+      "parent": "hud-frame clip-corner-sm p-3 flex items-center justify-betwe",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 23,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-arrow-up-right h-3.5 w-3.5 transition-transform group-hover:transl",
+      "paths": 2,
+      "parent": "group flex items-center gap-1.5 font-mono text-xs uppercase ",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "i": 24,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-arrow-up-right h-3.5 w-3.5 transition-transform group-hover:transl",
+      "paths": 2,
+      "parent": "group flex items-center gap-1.5 font-mono text-xs uppercase ",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "i": 25,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crown h-4 w-4 text-camo-500",
+      "paths": 2,
+      "parent": "hud-frame clip-corner-sm p-3 flex items-center gap-3 hover:b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 26,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crown h-4 w-4 text-camo-500",
+      "paths": 2,
+      "parent": "hud-frame clip-corner-sm p-3 flex items-center gap-3 hover:b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 27,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crown h-4 w-4 text-camo-500",
+      "paths": 2,
+      "parent": "hud-frame clip-corner-sm p-3 flex items-center gap-3 hover:b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 28,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-crown h-4 w-4 text-camo-500",
+      "paths": 2,
+      "parent": "hud-frame clip-corner-sm p-3 flex items-center gap-3 hover:b",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "i": 29,
+      "vb": "0 0 24 24",
+      "cls": "lucide lucide-arrow-up-right h-3.5 w-3.5 transition-transform group-hover:transl",
+      "paths": 2,
+      "parent": "group flex items-center gap-1.5 font-mono text-xs uppercase ",
+      "w": 14,
+      "h": 14
+    }
+  ]
+}

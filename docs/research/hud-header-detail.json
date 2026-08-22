@@ -1,0 +1,239 @@
+{
+  "rules": {
+    ".hud-frame": ".hud-frame { position: relative; border-width: 1px; border-color: rgba(58, 74, 47, 0.6); background-color: rgba(16, 20, 16, 0.7); --tw-backdrop-blur: blur(4px); backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia); }",
+    ".hud-frame::after, .hud-frame::before": ".hud-frame::after, .hud-frame::before { content: \"\"; position: absolute; width: 14px; height: 14px; border-color: rgb(232, 93, 58); border-style: solid; }",
+    ".hud-frame::before": ".hud-frame::before { top: -1px; left: -1px; border-width: 2px 0px 0px 2px; }",
+    ".hud-frame::after": ".hud-frame::after { bottom: -1px; right: -1px; border-width: 0px 2px 2px 0px; }"
+  },
+  "hudStyles": {
+    "border": "1px solid rgba(58, 74, 47, 0.6)",
+    "background": "rgba(10, 12, 10, 0.6)",
+    "padding": "20px",
+    "clipPath": "polygon(12px 0px, 100% 0px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0px 100%, 0px 12px)",
+    "boxShadow": "none",
+    "backdropFilter": "blur(4px)"
+  },
+  "headerTree": {
+    "tag": "header",
+    "cls": "sticky top-0 z-50 border-b border-camo-800/70 bg-bunker-950/85 backdrop-blur-md",
+    "text": "SIGNAL \u00b7 LIVE | // | COUNTRY OPS \u00b7 ROBLOX | LIVE BUILD | // | UNOFFICI",
+    "kids": [
+      {
+        "tag": "div",
+        "cls": "border-b border-camo-900/80 bg-bunker-900/70",
+        "text": "SIGNAL \u00b7 LIVE | // | COUNTRY OPS \u00b7 ROBLOX | LIVE BUILD | // | UNOFFICI",
+        "kids": [
+          {
+            "tag": "div",
+            "cls": "mx-auto flex max-w-7xl items-center justify-between px-4 py-1 text-[11px] font-mono uppercase tracking-widest text-camo-300",
+            "text": "SIGNAL \u00b7 LIVE | // | COUNTRY OPS \u00b7 ROBLOX | LIVE BUILD | // | UNOFFICI",
+            "kids": [
+              {
+                "tag": "div",
+                "cls": "flex items-center gap-3",
+                "text": "SIGNAL \u00b7 LIVE | // | COUNTRY OPS \u00b7 ROBLOX",
+                "kids": [
+                  {
+                    "tag": "span",
+                    "cls": "flex items-center gap-1.5",
+                    "text": "SIGNAL \u00b7 LIVE",
+                    "kids": []
+                  },
+                  {
+                    "tag": "span",
+                    "cls": "hidden sm:inline text-bunker-500",
+                    "text": "//",
+                    "kids": []
+                  },
+                  {
+                    "tag": "span",
+                    "cls": "hidden sm:inline",
+                    "text": "COUNTRY OPS \u00b7 ROBLOX",
+                    "kids": []
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "cls": "hidden md:flex items-center gap-3",
+                "text": "LIVE BUILD | // | UNOFFICIAL CODEX",
+                "kids": [
+                  {
+                    "tag": "span",
+                    "cls": "",
+                    "text": "LIVE BUILD",
+                    "kids": []
+                  },
+                  {
+                    "tag": "span",
+                    "cls": "text-bunker-500",
+                    "text": "//",
+                    "kids": []
+                  },
+                  {
+                    "tag": "span",
+                    "cls": "",
+                    "text": "UNOFFICIAL CODEX",
+                    "kids": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "cls": "mx-auto flex max-w-7xl items-center justify-between px-4 py-3",
+        "text": "MINI WAR | \u00b7 COMBAT CODEX \u00b7 | BUILDINGS | STRATEGY | SYSTEMS | TIER LI",
+        "kids": [
+          {
+            "tag": "a",
+            "cls": "group flex items-center gap-3",
+            "text": "MINI WAR | \u00b7 COMBAT CODEX \u00b7",
+            "kids": [
+              {
+                "tag": "div",
+                "cls": "relative flex h-10 w-10 items-center justify-center border border-ember-500 bg-bunker-900 clip-corner-sm",
+                "text": "",
+                "kids": [
+                  {
+                    "tag": "svg",
+                    "cls": "[object SVGAnimatedString]",
+                    "text": "",
+                    "kids": []
+                  },
+                  {
+                    "tag": "div",
+                    "cls": "absolute inset-0 animate-pulse bg-ember-500/0",
+                    "text": "",
+                    "kids": []
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "cls": "leading-none",
+                "text": "MINI WAR | \u00b7 COMBAT CODEX \u00b7",
+                "kids": [
+                  {
+                    "tag": "div",
+                    "cls": "font-display text-xl tracking-[0.2em] text-sand-100 uppercase",
+                    "text": "MINI WAR",
+                    "kids": []
+                  },
+                  {
+                    "tag": "div",
+                    "cls": "font-mono text-[10px] tracking-[0.3em] text-camo-400 uppercase",
+                    "text": "\u00b7 COMBAT CODEX \u00b7",
+                    "kids": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "nav",
+            "cls": "hidden lg:flex items-center gap-1",
+            "text": "BUILDINGS | STRATEGY | SYSTEMS | TIER LIST | GUIDES | CODES | NEWS | PATCH",
+            "kids": [
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "BUILDINGS",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "STRATEGY",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "SYSTEMS",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "TIER LIST",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "GUIDES",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "CODES",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "NEWS",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "PATCH",
+                "kids": []
+              },
+              {
+                "tag": "a",
+                "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+                "text": "FAQ",
+                "kids": []
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "cls": "flex items-center gap-2",
+            "text": "SEARCH",
+            "kids": [
+              {
+                "tag": "a",
+                "cls": "group flex h-10 items-center gap-2 border border-camo-700 bg-bunker-900/70 px-3 text-camo-300 hover:border-ember-500 hover:text-ember-400 transition-colors clip",
+                "text": "SEARCH",
+                "kids": [
+                  {
+                    "tag": "svg",
+                    "cls": "[object SVGAnimatedString]",
+                    "text": "",
+                    "kids": []
+                  },
+                  {
+                    "tag": "span",
+                    "cls": "hidden sm:inline font-mono text-xs uppercase tracking-widest",
+                    "text": "SEARCH",
+                    "kids": []
+                  }
+                ]
+              },
+              {
+                "tag": "button",
+                "cls": "lg:hidden flex h-10 w-10 items-center justify-center border border-camo-700 bg-bunker-900/70 text-camo-200 clip-corner-sm",
+                "text": "",
+                "kids": [
+                  {
+                    "tag": "svg",
+                    "cls": "[object SVGAnimatedString]",
+                    "text": "",
+                    "kids": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

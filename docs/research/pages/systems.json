@@ -1,0 +1,61 @@
+{
+  "title": "Mini Wars Game Systems \u2014 How Mini Wars Actually Works \u00b7 Mini Wars Wiki",
+  "url": "/systems",
+  "h1": "MINI WARS GAME SYSTEMS",
+  "allNav": [
+    {
+      "href": "/buildings",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "BUILDINGS"
+    },
+    {
+      "href": "/strategy",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "STRATEGY"
+    },
+    {
+      "href": "/systems",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-ember-400",
+      "color": "rgb(255, 106, 58)",
+      "text": "SYSTEMS"
+    },
+    {
+      "href": "/tier-list",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "TIER LIST"
+    },
+    {
+      "href": "/guides",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "GUIDES"
+    },
+    {
+      "href": "/codes",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "CODES"
+    },
+    {
+      "href": "/news",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "NEWS"
+    },
+    {
+      "href": "/patch-notes",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "PATCH"
+    },
+    {
+      "href": "/faq",
+      "cls": "relative px-3 py-2 font-display text-sm uppercase tracking-widest transition-colors text-bunker-200 hover:text-sand-100",
+      "color": "rgb(196, 203, 185)",
+      "text": "FAQ"
+    }
+  ]
+}

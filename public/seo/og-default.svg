@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mini Wars Wiki — Default Open Graph card (1200×630)
+  Tactical military aesthetic. Self-contained SVG with no external font dependencies.
+  Used by Twitter, Discord, Slack, Facebook, and Telegram link previews.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img"
+     aria-label="Mini Wars Wiki — Roblox Country Conquest Codex">
+  <defs>
+    <!-- Bunker dark background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#13181a"/>
+      <stop offset="60%"  stop-color="#0b0e0d"/>
+      <stop offset="100%" stop-color="#070a09"/>
+    </linearGradient>
+
+    <!-- Ember radial glow behind crosshair -->
+    <radialGradient id="emberGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#d97706" stop-opacity="0.55"/>
+      <stop offset="50%"  stop-color="#b45309" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0b0e0d" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ember core for crosshair dot -->
+    <radialGradient id="emberCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#fbbf24" stop-opacity="1"/>
+      <stop offset="55%"  stop-color="#d97706" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7c2d12" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Vignette for edge falloff -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="60%"  stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+
+    <!-- Reusable HUD grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1f2937" stroke-width="0.6" opacity="0.55"/>
+    </pattern>
+
+    <!-- Diagonal stripe pattern for tactical accent -->
+    <pattern id="stripes" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="14" fill="#d97706" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <!-- ========== BACKGROUND ========== -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+
+  <!-- Ember glow blob (top-right) -->
+  <circle cx="950" cy="180" r="320" fill="url(#emberGlow)"/>
+
+  <!-- ========== HUD FRAME (clip-corner outer plate) ========== -->
+  <path
+    d="M 36 24 L 1164 24 L 1176 36 L 1176 594 L 1164 606 L 36 606 L 24 594 L 24 36 Z"
+    fill="none"
+    stroke="#d97706"
+    stroke-width="2"
+    opacity="0.85"
+  />
+  <!-- Inner hairline frame -->
+  <path
+    d="M 50 40 L 1150 40 L 1160 50 L 1160 580 L 1150 590 L 50 590 L 40 580 L 40 50 Z"
+    fill="none"
+    stroke="#475569"
+    stroke-width="1"
+    opacity="0.45"
+  />
+
+  <!-- ========== TOP STATUS BAR ========== -->
+  <g font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace">
+    <!-- Live signal -->
+    <circle cx="78" cy="78" r="5" fill="#10b981"/>
+    <text x="92" y="83" font-size="16" letter-spacing="4" fill="#a3b8b0" font-weight="600">SIGNAL · LIVE</text>
+    <!-- Separator -->
+    <text x="248" y="83" font-size="16" fill="#475569">//</text>
+    <!-- Domain -->
+    <text x="280" y="83" font-size="16" letter-spacing="4" fill="#a3b8b0" font-weight="600">MINIWARS.ART</text>
+
+    <!-- Right-side status -->
+    <text x="1122" y="83" font-size="16" letter-spacing="4" fill="#94a3b8" text-anchor="end" font-weight="600">UNOFFICIAL CODEX</text>
+    <text x="1135" y="83" font-size="16" fill="#475569">·</text>
+    <text x="1158" y="83" font-size="16" letter-spacing="4" fill="#fbbf24" text-anchor="end" font-weight="600">LIVE BUILD</text>
+  </g>
+
+  <!-- Top divider with notch -->
+  <line x1="60" y1="106" x2="1140" y2="106" stroke="#1f2937" stroke-width="1"/>
+
+  <!-- ========== LEFT COLUMN: BRAND + TAGLINE + COPY ========== -->
+  <g font-family="'Black Ops One', 'Impact', 'Oswald', 'Arial Black', sans-serif">
+    <!-- Eyebrow -->
+    <g font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace">
+      <rect x="78" y="148" width="14" height="14" fill="#d97706"/>
+      <text x="104" y="160" font-size="18" letter-spacing="6" fill="#fbbf24" font-weight="700">ROBLOX · MINI WARS · CODEX</text>
+    </g>
+
+    <!-- Headline line 1 -->
+    <text x="78" y="248" font-size="92" letter-spacing="4" fill="#f5f5f4" font-weight="900">BUILD A COUNTRY.</text>
+    <!-- Headline line 2 with ember accent on "CRUSH" -->
+    <text x="78" y="340" font-size="92" letter-spacing="4" fill="#f5f5f4" font-weight="900">
+      <tspan fill="#d97706">CRUSH</tspan>
+      <tspan dx="14">YOUR NEIGHBORS.</tspan>
+    </text>
+  </g>
+
+  <!-- Tagline / description (sans-serif body) -->
+  <g font-family="'Rajdhani', 'Inter', 'Segoe UI', sans-serif">
+    <text x="78" y="396" font-size="26" fill="#cbd5e1" font-weight="500" letter-spacing="0.5">
+      Buildings · Strategies · Tier Lists · Codes · Patch Notes
+    </text>
+    <text x="78" y="430" font-size="22" fill="#94a3b8" font-weight="400" letter-spacing="0.3">
+      The unofficial strategy codex for the country-conquest meta.
+    </text>
+  </g>
+
+  <!-- ========== STAT STRIP (bottom of left column) ========== -->
+  <g font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace">
+    <!-- Stat 1 -->
+    <line x1="78" y1="486" x2="78" y2="544" stroke="#d97706" stroke-width="3"/>
+    <text x="92" y="510" font-size="36" fill="#f5f5f4" font-weight="800">21</text>
+    <text x="92" y="538" font-size="14" letter-spacing="4" fill="#94a3b8" font-weight="600">BUILDINGS</text>
+
+    <!-- Stat 2 -->
+    <line x1="246" y1="486" x2="246" y2="544" stroke="#d97706" stroke-width="3"/>
+    <text x="260" y="510" font-size="36" fill="#f5f5f4" font-weight="800">7</text>
+    <text x="260" y="538" font-size="14" letter-spacing="4" fill="#94a3b8" font-weight="600">STRATEGIES</text>
+
+    <!-- Stat 3 -->
+    <line x1="420" y1="486" x2="420" y2="544" stroke="#d97706" stroke-width="3"/>
+    <text x="434" y="510" font-size="36" fill="#f5f5f4" font-weight="800">7</text>
+    <text x="434" y="538" font-size="14" letter-spacing="4" fill="#94a3b8" font-weight="600">SYSTEMS</text>
+
+    <!-- Stat 4 -->
+    <line x1="588" y1="486" x2="588" y2="544" stroke="#d97706" stroke-width="3"/>
+    <text x="602" y="510" font-size="36" fill="#f5f5f4" font-weight="800">3</text>
+    <text x="602" y="538" font-size="14" letter-spacing="4" fill="#94a3b8" font-weight="600">GUIDES</text>
+  </g>
+
+  <!-- ========== RIGHT COLUMN: CROSSHAIR HUD MEDALLION ========== -->
+  <g transform="translate(940, 320)">
+    <!-- Outer ember halo (already painted via emberGlow circle above; this adds focused ring) -->
+
+    <!-- Tactical bracket frame around crosshair -->
+    <g fill="none" stroke="#475569" stroke-width="2" stroke-linecap="square" opacity="0.7">
+      <!-- corner brackets -->
+      <polyline points="-150,-150 -150,-118 -118,-150"/>
+      <polyline points="150,-150 118,-150 150,-118"/>
+      <polyline points="-150,150 -150,118 -118,150"/>
+      <polyline points="150,150 118,150 150,118"/>
+    </g>
+
+    <!-- Decorative diagonal stripe wedge bottom-right -->
+    <path d="M 90 130 L 150 130 L 150 70 Z" fill="url(#stripes)"/>
+
+    <!-- Ranging tick marks on outer edge -->
+    <g stroke="#64748b" stroke-width="1.5" opacity="0.6">
+      <line x1="-130" y1="0" x2="-110" y2="0"/>
+      <line x1="110"  y1="0" x2="130"  y2="0"/>
+      <line x1="0" y1="-130" x2="0" y2="-110"/>
+      <line x1="0" y1="110"  x2="0" y2="130"/>
+    </g>
+
+    <!-- Outer crosshair ring -->
+    <circle r="100" fill="none" stroke="#d97706" stroke-width="3" opacity="0.95"/>
+    <!-- Mid dashed ring -->
+    <circle r="72"  fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.7"/>
+    <!-- Inner ring -->
+    <circle r="46"  fill="none" stroke="#fbbf24" stroke-width="1.5" opacity="0.85"/>
+
+    <!-- Cardinal cross lines -->
+    <g stroke="#d97706" stroke-width="3" stroke-linecap="square">
+      <line x1="0" y1="-100" x2="0" y2="-58"/>
+      <line x1="0" y1="58"   x2="0" y2="100"/>
+      <line x1="-100" y1="0" x2="-58" y2="0"/>
+      <line x1="58"  y1="0"  x2="100" y2="0"/>
+    </g>
+
+    <!-- Small reticle ticks -->
+    <g stroke="#fef3c7" stroke-width="2" stroke-linecap="square">
+      <line x1="0" y1="-46" x2="0" y2="-36"/>
+      <line x1="0" y1="36"  x2="0" y2="46"/>
+      <line x1="-46" y1="0" x2="-36" y2="0"/>
+      <line x1="36"  y1="0" x2="46"  y2="0"/>
+    </g>
+
+    <!-- Center ember dot -->
+    <circle r="14" fill="url(#emberCore)"/>
+    <circle r="5"  fill="#fff7ed" opacity="0.9"/>
+
+    <!-- Coordinate label -->
+    <g font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace" fill="#94a3b8" font-size="13" letter-spacing="3">
+      <text x="-150" y="-160" font-weight="600">N 00°</text>
+      <text x="150" y="-160" text-anchor="end" font-weight="600">SECTOR · 07</text>
+      <text x="-150" y="172" font-weight="600">META · S-TIER</text>
+      <text x="150" y="172" text-anchor="end" font-weight="600" fill="#fbbf24">LOCKED</text>
+    </g>
+  </g>
+
+  <!-- ========== BOTTOM STATUS BAR ========== -->
+  <line x1="60" y1="556" x2="1140" y2="556" stroke="#1f2937" stroke-width="1"/>
+
+  <g font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace" font-size="15" letter-spacing="4" font-weight="600">
+    <!-- Left: brand wordmark -->
+    <text x="78" y="586" fill="#94a3b8">MINI WARS WIKI</text>
+    <text x="232" y="586" fill="#475569">//</text>
+    <text x="260" y="586" fill="#94a3b8">COMBAT CODEX</text>
+
+    <!-- Right: domain -->
+    <text x="1122" y="586" fill="#fbbf24" text-anchor="end">MINIWARS.ART</text>
+  </g>
+
+  <!-- Scan line accent (top) -->
+  <line x1="0" y1="20" x2="1200" y2="20" stroke="#d97706" stroke-width="1.5" opacity="0.6"/>
+  <!-- Scan line accent (bottom) -->
+  <line x1="0" y1="610" x2="1200" y2="610" stroke="#d97706" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Stencil dashes on top edge -->
+  <g stroke="#d97706" stroke-width="2" opacity="0.85">
+    <line x1="60"  y1="10" x2="100" y2="10"/>
+    <line x1="120" y1="10" x2="160" y2="10"/>
+    <line x1="180" y1="10" x2="220" y2="10"/>
+  </g>
+  <g stroke="#d97706" stroke-width="2" opacity="0.85">
+    <line x1="980"  y1="10" x2="1020" y2="10"/>
+    <line x1="1040" y1="10" x2="1080" y2="10"/>
+    <line x1="1100" y1="10" x2="1140" y2="10"/>
+  </g>
+</svg>

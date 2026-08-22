@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mini Wars Wiki — Favicon
+  Tactical military aesthetic. Bunker-dark background with ember-orange crosshair.
+  Designed for the miniwars.art domain. Self-contained, no external dependencies.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Mini Wars Wiki">
+  <defs>
+    <!-- Subtle radial highlight on the ember core -->
+    <radialGradient id="emberCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#d97706" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#92400e" stop-opacity="1"/>
+    </radialGradient>
+    <!-- Bunker background gradient -->
+    <linearGradient id="bunkerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13181a"/>
+      <stop offset="100%" stop-color="#0b0e0d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clipped corner tactical plate (matches site's clip-corner style) -->
+  <path
+    d="M 6 2 L 58 2 L 62 6 L 62 58 L 58 62 L 6 62 L 2 58 L 2 6 Z"
+    fill="url(#bunkerBg)"
+    stroke="#d97706"
+    stroke-width="2"
+  />
+
+  <!-- Faint grid lines for HUD feel -->
+  <g stroke="#1f2937" stroke-width="0.5" opacity="0.5">
+    <line x1="32" y1="6" x2="32" y2="58"/>
+    <line x1="6" y1="32" x2="58" y2="32"/>
+  </g>
+
+  <!-- Crosshair brackets — top-left and bottom-right corners only for asymmetric tactical look -->
+  <g fill="none" stroke="#475569" stroke-width="1.5" stroke-linecap="square">
+    <polyline points="12,18 12,12 18,12"/>
+    <polyline points="46,52 52,52 52,46"/>
+  </g>
+
+  <!-- Outer crosshair ring -->
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#d97706" stroke-width="2.5" opacity="0.95"/>
+
+  <!-- Crosshair tick marks (cardinal) -->
+  <g stroke="#d97706" stroke-width="2.5" stroke-linecap="square">
+    <line x1="32" y1="6"  x2="32" y2="14"/>
+    <line x1="32" y1="50" x2="32" y2="58"/>
+    <line x1="6"  y1="32" x2="14" y2="32"/>
+    <line x1="50" y1="32" x2="58" y2="32"/>
+  </g>
+
+  <!-- Ember core dot -->
+  <circle cx="32" cy="32" r="6" fill="url(#emberCore)"/>
+  <circle cx="32" cy="32" r="2.2" fill="#fff7ed" opacity="0.9"/>
+</svg>
