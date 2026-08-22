@@ -70,8 +70,8 @@ export const Route = createRootRoute({
         { name: 'description', content: envConfigs.app_description },
       ],
       links: [
-        { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
-        { rel: 'apple-touch-icon', href: '/favicon.svg' },
+        { rel: 'icon', href: '/favicon.png', type: 'image/png' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/seo/manifest.webmanifest' },
         {
           rel: 'preload',

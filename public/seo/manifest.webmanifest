@@ -1,1 +1,32 @@
-{"name":"Mini Wars Wiki","short_name":"Mini Wars","description":"Unofficial strategy codex for Mini Wars on Roblox by Horangi99. Buildings, country strategies, game systems, tier lists, codes, patch notes, and high-impact playbooks for the country-conquest meta.","start_url":"/","display":"standalone","background_color":"#0b0e0d","theme_color":"#d97706","orientation":"portrait-primary","categories":["games","reference","guides"],"icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}],"lang":"en"}
+{
+  "name": "Heatwarped Wiki",
+  "short_name": "Heatwarped",
+  "description": "Unofficial Heatwarped Wiki covering the demo, cars, customization, release status and verified discoveries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06070d",
+  "theme_color": "#ff6a3a",
+  "orientation": "portrait-primary",
+  "categories": ["games", "reference", "guides"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "lang": "en"
+}

@@ -270,7 +270,7 @@ function Header() {
   return <>
     <div className="hw-signal"><span>● SIGNAL · LIVE</span><span>STREET RACING // UNOFFICIAL CODEX</span></div>
     <header className="hw-header">
-      <Link to="/" className="hw-brand" aria-label="Heatwarped Wiki home"><img src="/heatwarped-logo.svg" alt="Heatwarped Wiki" /></Link>
+      <Link to="/" className="hw-brand" aria-label="Heatwarped Wiki home"><img src="/logo.png" alt="Heatwarped Wiki" /></Link>
       <nav className="hw-nav" aria-label="Main navigation">
         <Link to="/cars" activeProps={{ className: 'active' }}>CARS</Link>
         <Link to="/demo" activeProps={{ className: 'active' }}>DEMO</Link>
@@ -327,7 +327,7 @@ export function HeatwarpedPage({ pageKey }: { pageKey: HeatwarpedPageKey }) {
         </article>
       </section>
     </main>
-    <footer className="hw-footer"><img src="/heatwarped-logo.svg" alt="Heatwarped Wiki"/><p>Unofficial fan reference. Not affiliated with Sealime. Heatwarped names and game assets belong to their respective owners.</p><a href={steamUrl} target="_blank" rel="noreferrer">OFFICIAL STEAM ↗</a></footer>
+    <footer className="hw-footer"><img src="/logo.png" alt="Heatwarped Wiki"/><p>Unofficial fan reference. Not affiliated with Sealime. Heatwarped names and game assets belong to their respective owners.</p><a href={steamUrl} target="_blank" rel="noreferrer">OFFICIAL STEAM ↗</a></footer>
   </div>;
 }
 
