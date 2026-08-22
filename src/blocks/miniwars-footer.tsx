@@ -1,28 +1,22 @@
-import { m } from '@/paraglide/messages.js';
 import { MiniWarsFooter } from '@/components/miniwars/site-footer';
 
 export function MiniWarsFooterBlock() {
   return (
     <MiniWarsFooter
-      blurb={m['miniwars.footer.blurb']()}
-      disclaimer={m['miniwars.footer.disclaimer']()}
-      codexTitle={m['miniwars.footer.codex']()}
-      playersTitle={m['miniwars.footer.players']()}
+      blurb="Independent Heatwarped reference focused on verified Steam and developer information. Unconfirmed release dates, platforms, cars, and features are intentionally not presented as fact."
+      disclaimer="UNOFFICIAL FAN-MADE WIKI · NOT AFFILIATED WITH SEALIME"
+      codexTitle="Heatwarped Info"
+      playersTitle="Play & Follow"
       codexLinks={[
-        { href: '/buildings', label: m['miniwars.nav.buildings']() },
-        { href: '/strategy', label: m['miniwars.footer.strategies']() },
-        { href: '/systems', label: m['miniwars.footer.systems']() },
-        { href: '/tier-list', label: m['miniwars.nav.tier_list']() },
+        { href: '/release-date', label: 'Heatwarped Release Date' },
+        { href: '/system-requirements', label: 'Heatwarped System Requirements' },
       ]}
       playerLinks={[
-        { href: '/codes', label: m['miniwars.nav.codes']() },
-        { href: '/guides', label: m['miniwars.footer.guides']() },
-        { href: '/news', label: m['miniwars.footer.news']() },
-        { href: '/patch-notes', label: m['miniwars.footer.patch_notes']() },
-        { href: '/faq', label: m['miniwars.nav.faq']() },
+        { href: '/demo', label: 'Heatwarped Demo' },
+        { href: '/gameplay', label: 'Heatwarped Gameplay' },
       ]}
-      copyright={m['miniwars.footer.copyright']()}
-      builtWith={m['miniwars.footer.built_with']()}
+      copyright="Heatwarped Wiki"
+      builtWith="Sources checked against official channels"
     />
   );
 }
