@@ -1,11 +1,11 @@
 import { Crosshair } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
-import { BuiltWithShipAny } from '@/components/built-with-shipany';
 
 export type MiniWarsFooterLink = {
   href: string;
   label: string;
+  external?: boolean;
 };
 
 export function MiniWarsFooter({
@@ -13,8 +13,10 @@ export function MiniWarsFooter({
   disclaimer,
   codexTitle,
   playersTitle,
+  legalTitle,
   codexLinks,
   playerLinks,
+  legalLinks,
   copyright,
   builtWith,
 }: {
@@ -22,16 +24,18 @@ export function MiniWarsFooter({
   disclaimer: string;
   codexTitle: string;
   playersTitle: string;
+  legalTitle: string;
   codexLinks: MiniWarsFooterLink[];
   playerLinks: MiniWarsFooterLink[];
+  legalLinks: MiniWarsFooterLink[];
   copyright: string;
   builtWith: string;
 }) {
   return (
     <footer className="border-camo-900 bg-bunker-950/95 relative z-10 mt-24 border-t">
       <div className="stencil-line" />
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-4">
-        <div className="md:col-span-2">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-2 lg:grid-cols-5">
+        <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
             <div className="border-ember-500 bg-bunker-900 clip-corner-sm flex h-9 w-9 items-center justify-center border">
               <Crosshair className="text-ember-500 h-4 w-4" />
@@ -73,6 +77,31 @@ export function MiniWarsFooter({
           <ul className="text-bunker-300 space-y-2 text-sm">
             {playerLinks.map((link) => (
               <li key={link.href}>
+                {'external' in link && link.external ? (
+                  <a
+                    className="hover:text-sand-100"
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link className="hover:text-sand-100" href={link.href}>
+                    {link.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-display text-ember-500 mb-3 text-sm tracking-widest uppercase">
+            {legalTitle}
+          </h4>
+          <ul className="text-bunker-300 space-y-2 text-sm">
+            {legalLinks.map((link) => (
+              <li key={link.href}>
                 <Link className="hover:text-sand-100" href={link.href}>
                   {link.label}
                 </Link>
@@ -86,9 +115,6 @@ export function MiniWarsFooter({
           <span>{copyright}</span>
           <span>{builtWith}</span>
         </div>
-      </div>
-      <div className="mx-auto max-w-7xl px-4 pb-6">
-        <BuiltWithShipAny />
       </div>
     </footer>
   );
