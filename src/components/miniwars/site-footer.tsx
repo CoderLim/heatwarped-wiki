@@ -38,10 +38,10 @@ export function MiniWarsFooter({
             </div>
             <div>
               <div className="font-display text-sand-100 text-lg tracking-[0.2em] uppercase">
-                Mini War Wiki
+                Heatwarped Wiki
               </div>
               <div className="text-camo-400 font-mono text-[10px] tracking-[0.3em] uppercase">
-                Combat Codex
+                Street Racing Reference
               </div>
             </div>
           </div>
