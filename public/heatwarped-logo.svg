@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 120" role="img" aria-labelledby="title desc">
+  <title id="title">Heatwarped Wiki</title>
+  <desc id="desc">A street-racing inspired Heatwarped Wiki wordmark.</desc>
+  <g>
+    <path d="M0 0h104l-18 28H30L0 0Z" fill="#52e7ff"/>
+    <path d="M0 120h104L86 92H30L0 120Z" fill="#ff6b2c"/>
+    <path d="M23 27h21v66H23zM61 27h21v66H61zM40 50h25v20H40z" fill="#eef3f6"/>
+    <path d="M92 0h12v120H92z" fill="#b9ff4a"/>
+  </g>
+  <text x="126" y="70" fill="#eef3f6" font-family="Arial Narrow, Roboto Condensed, Impact, sans-serif" font-size="62" font-weight="900" letter-spacing="2">HEATWARPED</text>
+  <text x="129" y="105" fill="#52e7ff" font-family="JetBrains Mono, monospace" font-size="21" font-weight="700" letter-spacing="10">WIKI // RATFIELD</text>
+</svg>
