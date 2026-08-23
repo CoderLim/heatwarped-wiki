@@ -16,7 +16,7 @@ function HeatwarpedHomeWithMedia() {
 export const Route = createFileRoute('/')(
   heatwarpedPageRouteOptions({
     path: '/',
-    title: 'Heatwarped - Open-World Street Racing Game, Demo & Info',
+    title: 'Heatwarped Game - Open-World Street Racing | Demo, Release Date & PC Specs',
     description:
       'Heatwarped is an open-world street racing game set in the 2000s. Find the official Steam demo, current release status, PC requirements, and gameplay details.',
     Page: HeatwarpedHomeWithMedia,

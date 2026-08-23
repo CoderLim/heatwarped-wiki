@@ -345,8 +345,21 @@ export function HeatwarpedReleaseDatePage() {
 }
 
 export function HeatwarpedSystemRequirementsPage() {
+  const softwareApplicationSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Heatwarped',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Windows 10 64-bit',
+    processorRequirements: 'AMD FX 8320, Intel Core i5-3570K',
+    memoryRequirements: '4 GB RAM',
+    description: 'Heatwarped PC system requirements from the official Steam listing.',
+    url: STEAM_URL,
+  });
+
   return (
     <>
+      <script type="application/ld+json">{softwareApplicationSchema}</script>
       <PageIntro
         eyebrow={`Heatwarped PC specs · Steam source checked ${VERIFIED_DATE}`}
         title="Heatwarped System Requirements"
@@ -424,8 +437,22 @@ export function HeatwarpedSystemRequirementsPage() {
 }
 
 export function HeatwarpedDemoPage() {
+  const howToSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Download the Heatwarped Demo',
+    step: [
+      { '@type': 'HowToStep', text: 'Open the official Heatwarped Steam store page.' },
+      { '@type': 'HowToStep', text: 'Sign in to Steam if prompted.' },
+      { '@type': 'HowToStep', text: 'Click the demo download/install button on the Heatwarped store page.' },
+      { '@type': 'HowToStep', text: 'Let Steam install the demo through the client.' },
+      { '@type': 'HowToStep', text: 'Launch the Heatwarped demo from your Steam Library.' },
+    ],
+  });
+
   return (
     <>
+      <script type="application/ld+json">{howToSchema}</script>
       <PageIntro
         eyebrow={`Heatwarped demo · official Steam download · checked ${VERIFIED_DATE}`}
         title="Heatwarped Demo"
