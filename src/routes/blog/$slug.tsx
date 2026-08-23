@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { socialMetaTags } from '@/lib/seo-meta';
 import { m } from '@/paraglide/messages.js';
 import { getLocale, localizeUrl } from '@/paraglide/runtime.js';
 import { Footer } from '@/blocks/footer';
@@ -25,13 +26,20 @@ export const Route = createFileRoute('/blog/$slug')({
   head: ({ loaderData }) => {
     if (!loaderData) return {};
     const { locale, post } = loaderData;
+    const title = `${post.title} | ${envConfigs.app_name}`;
     const canonical = localizeUrl(`${envConfigs.app_url}/blog/${post.slug}`, {
       locale: locale as any,
     }).href;
     return {
       meta: [
-        { title: `${post.title} | ${envConfigs.app_name}` },
+        { title },
         { name: 'description', content: post.description },
+        ...socialMetaTags({
+          title,
+          description: post.description || '',
+          url: canonical,
+          type: 'article',
+        }),
       ],
       links: [{ rel: 'canonical', href: canonical }],
     };

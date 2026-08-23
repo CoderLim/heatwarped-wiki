@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { envConfigs } from '@/config';
+import { socialMetaTags } from '@/lib/seo-meta';
 import { m } from '@/paraglide/messages.js';
 import { getLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
 import { Footer } from '@/blocks/footer';
@@ -19,18 +20,17 @@ export const Route = createFileRoute('/blog/')({
     const locale = loaderData?.locale;
     const urlFor = (loc: string) =>
       localizeUrl(`${envConfigs.app_url}/blog`, { locale: loc as any }).href;
+    const title = `${m['blog.title']({}, { locale: locale as any })} | ${envConfigs.app_name}`;
+    const description = m['blog.description']({}, { locale: locale as any });
+    const canonical = urlFor(locale ?? 'en');
     return {
       meta: [
-        {
-          title: `${m['blog.title']({}, { locale: locale as any })} | ${envConfigs.app_name}`,
-        },
-        {
-          name: 'description',
-          content: m['blog.description']({}, { locale: locale as any }),
-        },
+        { title },
+        { name: 'description', content: description },
+        ...socialMetaTags({ title, description, url: canonical }),
       ],
       links: [
-        { rel: 'canonical', href: urlFor(locale ?? 'en') },
+        { rel: 'canonical', href: canonical },
         ...locales.map((loc) => ({
           rel: 'alternate',
           hrefLang: loc,

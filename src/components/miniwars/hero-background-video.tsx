@@ -69,6 +69,8 @@ export function HeroBackgroundVideo({ videoSrc, posterSrc }: HeroBackgroundVideo
         src={posterSrc}
         alt=""
         aria-hidden="true"
+        width={1280}
+        height={960}
         fetchPriority="high"
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover object-center"

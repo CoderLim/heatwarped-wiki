@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react';
 
 import { envConfigs } from '@/config';
+import { socialMetaTags } from '@/lib/seo-meta';
 import { getLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
 import { MiniWarsPageShell } from '@/components/miniwars/page-shell';
 
@@ -29,16 +30,22 @@ export function heatwarpedPageRouteOptions({
         localizeUrl(`${envConfigs.app_url}${path === '/' ? '/' : path}`, {
           locale: loc as 'en' | 'zh',
         }).href;
+      const canonical = urlFor(locale);
 
       return {
         meta: loaderData
           ? [
               { title: loaderData.title },
               { name: 'description', content: loaderData.description },
+              ...socialMetaTags({
+                title: loaderData.title,
+                description: loaderData.description,
+                url: canonical,
+              }),
             ]
           : [],
         links: [
-          { rel: 'canonical', href: urlFor(locale) },
+          { rel: 'canonical', href: canonical },
           ...locales.map((loc) => ({
             rel: 'alternate',
             hrefLang: loc,

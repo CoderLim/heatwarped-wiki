@@ -5,9 +5,47 @@ import { baseLocale } from '@/paraglide/runtime.js';
 import { getLocalPosts, mergePosts } from '@/content/posts';
 
 const STATIC_PAGES: { path: string; title: string; description: string }[] = [
-  { path: '', title: 'Home', description: 'Landing page' },
-  { path: '/pricing', title: 'Pricing', description: 'Pricing plans' },
-  { path: '/blog', title: 'Blog', description: 'Blog posts and articles' },
+  {
+    path: '',
+    title: 'Heatwarped Wiki',
+    description:
+      'Open-world street racing game demo, release status, PC requirements, and gameplay details.',
+  },
+  {
+    path: '/release-date',
+    title: 'Heatwarped Release Date',
+    description: 'Official release status (TBA) and where to watch for announcements.',
+  },
+  {
+    path: '/system-requirements',
+    title: 'Heatwarped System Requirements',
+    description: 'Minimum Windows PC specs from the official Steam listing.',
+  },
+  {
+    path: '/demo',
+    title: 'Heatwarped Demo',
+    description: 'How to download and install the free Steam demo.',
+  },
+  {
+    path: '/gameplay',
+    title: 'Heatwarped Gameplay',
+    description: 'Source-conscious overview of confirmed gameplay details.',
+  },
+  {
+    path: '/source-policy',
+    title: 'Source Policy',
+    description: 'How this wiki verifies facts from Steam and official channels.',
+  },
+  {
+    path: '/privacy-policy',
+    title: 'Privacy Policy',
+    description: 'Privacy policy for Heatwarped Wiki.',
+  },
+  {
+    path: '/terms-of-service',
+    title: 'Terms of Use',
+    description: 'Terms of use for Heatwarped Wiki.',
+  },
 ];
 
 export const Route = createFileRoute('/llms-full.txt')({

@@ -116,10 +116,10 @@ export function HeatwarpedHomePage() {
         <div className="relative mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-16 md:py-20">
           <div className="grid w-full gap-10 md:grid-cols-12 md:items-center">
             <div className="md:col-span-7">
-              <div className="text-ember-500 mb-5 font-mono text-xs tracking-[0.35em] uppercase">
+              <div className="text-ember-500 mb-5 max-w-full font-mono text-[11px] tracking-[0.2em] uppercase sm:text-xs sm:tracking-[0.35em]">
                 Heatwarped · Open-world street racing · Demo available
               </div>
-              <h1 className="font-display text-sand-100 text-6xl leading-none tracking-wider uppercase md:text-8xl">
+              <h1 className="font-display text-sand-100 text-5xl leading-none tracking-wider uppercase sm:text-6xl md:text-8xl">
                 Heatwarped
               </h1>
               <p className="text-bunker-200 mt-6 max-w-2xl text-lg leading-8">
@@ -183,8 +183,8 @@ export function HeatwarpedHomePage() {
         </Paragraph>
 
         <H2>Heatwarped game status at a glance</H2>
-        <div className="border-camo-800 mt-5 overflow-hidden border">
-          <table className="w-full text-left text-sm">
+        <div className="border-camo-800 mt-5 overflow-x-auto border">
+          <table className="w-full min-w-[28rem] text-left text-sm">
             <tbody>
               {[
                 ['Heatwarped developer', 'Sealime'],
@@ -353,24 +353,26 @@ export function HeatwarpedSystemRequirementsPage() {
         intro="Heatwarped system requirements currently list Windows 10 64-bit, an AMD FX 8320 or Intel Core i5-3570K, 4 GB RAM, and a DirectX 11-capable graphics card."
       />
       <Article>
-        <div className="border-camo-800 overflow-hidden border">
-          <div className="bg-bunker-900/75 grid grid-cols-2 border-b border-camo-800">
-            <div className="text-ember-400 px-4 py-3 font-mono text-xs tracking-widest uppercase">Heatwarped minimum</div>
-            <div className="text-camo-400 px-4 py-3 font-mono text-xs tracking-widest uppercase">Heatwarped recommended</div>
-          </div>
-          {[
-            ['OS', 'Windows 10 64-bit', 'Not officially published'],
-            ['Processor', 'AMD FX 8320 / Intel Core i5-3570K', 'Not officially published'],
-            ['Memory', '4 GB RAM', 'Not officially published'],
-            ['Graphics', 'DirectX 11-capable graphics card', 'Not officially published'],
-            ['Storage', 'Not officially published', 'Not officially published'],
-          ].map(([label, minimum, recommended]) => (
-            <div key={label} className="grid grid-cols-[0.7fr_1.3fr_1.3fr] border-b border-camo-800 last:border-b-0">
-              <div className="text-camo-300 bg-bunker-900/40 px-3 py-3 font-mono text-[10px] tracking-widest uppercase">{label}</div>
-              <div className="text-bunker-100 px-3 py-3 text-sm">{minimum}</div>
-              <div className="text-bunker-400 px-3 py-3 text-sm">{recommended}</div>
+        <div className="border-camo-800 overflow-x-auto border">
+          <div className="min-w-[36rem]">
+            <div className="bg-bunker-900/75 grid grid-cols-2 border-b border-camo-800">
+              <div className="text-ember-400 px-4 py-3 font-mono text-xs tracking-widest uppercase">Heatwarped minimum</div>
+              <div className="text-camo-400 px-4 py-3 font-mono text-xs tracking-widest uppercase">Heatwarped recommended</div>
             </div>
-          ))}
+            {[
+              ['OS', 'Windows 10 64-bit', 'Not officially published'],
+              ['Processor', 'AMD FX 8320 / Intel Core i5-3570K', 'Not officially published'],
+              ['Memory', '4 GB RAM', 'Not officially published'],
+              ['Graphics', 'DirectX 11-capable graphics card', 'Not officially published'],
+              ['Storage', 'Not officially published', 'Not officially published'],
+            ].map(([label, minimum, recommended]) => (
+              <div key={label} className="grid grid-cols-[0.7fr_1.3fr_1.3fr] border-b border-camo-800 last:border-b-0">
+                <div className="text-camo-300 bg-bunker-900/40 px-3 py-3 font-mono text-[10px] tracking-widest uppercase">{label}</div>
+                <div className="text-bunker-100 px-3 py-3 text-sm">{minimum}</div>
+                <div className="text-bunker-400 px-3 py-3 text-sm">{recommended}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <H2>These are Heatwarped requirements, not NFS Heat requirements</H2>

@@ -106,13 +106,16 @@ export function miniWarsPageRouteOptions({ path, key, Page }: MiniWarsPageDef) {
         localizeUrl(`${envConfigs.app_url}${path === '/' ? '/' : path}`, {
           locale: loc as 'en' | 'zh',
         }).href;
+      // Leftover Mini Wars template routes — keep reachable but keep them
+      // out of search indexes so they don't compete with Heatwarped pages.
       return {
         meta: loaderData
           ? [
               { title: loaderData.title },
               { name: 'description', content: loaderData.description },
+              { name: 'robots', content: 'noindex, nofollow' },
             ]
-          : [],
+          : [{ name: 'robots', content: 'noindex, nofollow' }],
         links: [
           { rel: 'canonical', href: urlFor(locale) },
           ...locales.map((loc) => ({
@@ -120,15 +123,6 @@ export function miniWarsPageRouteOptions({ path, key, Page }: MiniWarsPageDef) {
             hrefLang: loc,
             href: urlFor(loc),
           })),
-          ...(path === '/'
-            ? [
-                {
-                  rel: 'alternate' as const,
-                  hrefLang: 'x-default',
-                  href: urlFor('en'),
-                },
-              ]
-            : []),
         ],
       };
     },
