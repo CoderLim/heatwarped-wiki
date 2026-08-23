@@ -1,5 +1,10 @@
 import { ArrowRight, Check, Download, ExternalLink, Info } from 'lucide-react';
 
+import {
+  HEATWARPED_HERO_POSTER,
+  HEATWARPED_HERO_VIDEO,
+  HeroBackgroundVideo,
+} from '@/components/miniwars/hero-background-video';
 import { envConfigs } from '@/config';
 import { Link } from '@/core/i18n/navigation';
 
@@ -104,16 +109,10 @@ export function HeatwarpedHomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
       <section className="border-camo-900 bg-camo-900 relative -mt-[4.5rem] flex min-h-dvh flex-col overflow-hidden border-b pt-[4.5rem]">
-        <img
-          src="/imgs/generated/heatwarped-hero-bg-1787448487337.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-camo-900 via-camo-900/85 to-camo-900/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-camo-900 via-camo-900/20 to-camo-900/55" />
-        <div className="grid-bg absolute inset-0 opacity-25" />
-        <div className="bg-ember-500/15 absolute -top-32 left-1/2 h-[480px] w-[820px] -translate-x-1/2 rounded-full blur-3xl" />
+        <HeroBackgroundVideo videoSrc={HEATWARPED_HERO_VIDEO} posterSrc={HEATWARPED_HERO_POSTER} />
+        {/* 轻遮罩：左侧保证文案可读，右侧尽量透出视频 */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-camo-900/75 via-camo-900/35 to-camo-900/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-camo-900/50 via-transparent to-camo-900/25" />
         <div className="relative mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-16 md:py-20">
           <div className="grid w-full gap-10 md:grid-cols-12 md:items-center">
             <div className="md:col-span-7">
