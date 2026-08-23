@@ -103,11 +103,19 @@ export function HeatwarpedHomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
-      <section className="border-camo-900 relative overflow-hidden border-b">
-        <div className="grid-bg absolute inset-0 opacity-40" />
+      <section className="border-camo-900 bg-camo-900 relative -mt-[4.5rem] flex min-h-dvh flex-col overflow-hidden border-b pt-[4.5rem]">
+        <img
+          src="/imgs/generated/heatwarped-hero-bg-1787448487337.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-camo-900 via-camo-900/85 to-camo-900/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-camo-900 via-camo-900/20 to-camo-900/55" />
+        <div className="grid-bg absolute inset-0 opacity-25" />
         <div className="bg-ember-500/15 absolute -top-32 left-1/2 h-[480px] w-[820px] -translate-x-1/2 rounded-full blur-3xl" />
-        <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-20 md:pt-24 md:pb-28">
-          <div className="grid gap-10 md:grid-cols-12 md:items-center">
+        <div className="relative mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-16 md:py-20">
+          <div className="grid w-full gap-10 md:grid-cols-12 md:items-center">
             <div className="md:col-span-7">
               <div className="text-ember-500 mb-5 font-mono text-xs tracking-[0.35em] uppercase">
                 Heatwarped · Open-world street racing · Demo available

@@ -39,7 +39,7 @@ export function MiniWarsFooter({
             <img
               src={envConfigs.app_logo || '/logo.png'}
               alt={envConfigs.app_name || 'Heatwarped Wiki'}
-              className="h-14 w-auto"
+              className="h-10 w-auto"
               width={334}
               height={80}
             />

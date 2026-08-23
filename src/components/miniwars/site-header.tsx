@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import { Link, usePathname } from '@/core/i18n/navigation';
@@ -10,6 +10,9 @@ export type MiniWarsNavItem = {
   label: string;
 };
 
+/** Scroll distance (px) over which the header fades from transparent → solid. */
+const SCROLL_FADE_RANGE = 96;
+
 export function MiniWarsHeader({
   navItems,
   searchLabel: _searchLabel,
@@ -19,20 +22,53 @@ export function MiniWarsHeader({
   searchLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      setScrollProgress(Math.min(1, window.scrollY / SCROLL_FADE_RANGE));
+    };
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
 
   function isActive(href: string) {
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
+  // Force solid chrome when the mobile menu is open so links stay readable.
+  const progress = open ? 1 : scrollProgress;
+  const bgAlpha = 0.85 * progress;
+  const borderAlpha = 0.7 * progress;
+  const blurPx = 12 * progress;
+
   return (
-    <header className="border-camo-800/70 bg-bunker-950/85 sticky top-0 z-50 border-b backdrop-blur-md">
+    <header
+      className="sticky top-0 z-50 border-b"
+      style={{
+        backgroundColor: `rgb(7 9 15 / ${bgAlpha})`,
+        borderColor: `rgb(32 41 60 / ${borderAlpha})`,
+        backdropFilter: blurPx > 0.1 ? `blur(${blurPx}px)` : undefined,
+        WebkitBackdropFilter: blurPx > 0.1 ? `blur(${blurPx}px)` : undefined,
+      }}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link className="group flex items-center" href="/">
           <img
             src={envConfigs.app_logo || '/logo.png'}
             alt={envConfigs.app_name || 'Heatwarped Wiki'}
-            className="h-12 w-auto transition-opacity group-hover:opacity-90 sm:h-14 md:h-16"
+            className="h-10 w-auto transition-opacity group-hover:opacity-90 sm:h-12"
             width={334}
             height={80}
           />
