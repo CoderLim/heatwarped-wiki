@@ -1,6 +1,5 @@
-import { Crosshair } from 'lucide-react';
-
 import { Link } from '@/core/i18n/navigation';
+import { envConfigs } from '@/config';
 
 export type MiniWarsFooterLink = {
   href: string;
@@ -36,18 +35,14 @@ export function MiniWarsFooter({
       <div className="stencil-line" />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <div className="flex items-center gap-3">
-            <div className="border-ember-500 bg-bunker-900 clip-corner-sm flex h-9 w-9 items-center justify-center border">
-              <Crosshair className="text-ember-500 h-4 w-4" />
-            </div>
-            <div>
-              <div className="font-display text-sand-100 text-lg tracking-[0.2em] uppercase">
-                Heatwarped Wiki
-              </div>
-              <div className="text-camo-400 font-mono text-[10px] tracking-[0.3em] uppercase">
-                Street Racing Reference
-              </div>
-            </div>
+          <div className="flex items-center">
+            <img
+              src={envConfigs.app_logo || '/logo.png'}
+              alt={envConfigs.app_name || 'Heatwarped Wiki'}
+              className="h-14 w-auto"
+              width={334}
+              height={80}
+            />
           </div>
           <p className="text-bunker-300 mt-4 max-w-md text-sm leading-7">
             {blurb}

@@ -33,9 +33,13 @@ export function SiteHeader({ navLinks }: { navLinks?: NavLink[] }) {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         {/* Brand */}
         <Link href="/" className="flex items-center">
-          <span className="font-serif text-lg italic">
-            {envConfigs.app_name}
-          </span>
+          <img
+            src={envConfigs.app_logo || '/logo.png'}
+            alt={envConfigs.app_name || 'Heatwarped Wiki'}
+            className="h-8 w-auto"
+            width={334}
+            height={80}
+          />
         </Link>
 
         {/* Desktop nav */}
