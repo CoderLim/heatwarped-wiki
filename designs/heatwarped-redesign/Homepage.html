@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-vibe="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heatwarped Wiki — Ratfield Night redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Rajdhani:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="homepage.css">
+<!--
+  DESIGN BRIEF (assumptions + reasoning)
+  --------------------------------------
+  Goal: restyle heatwarped-wiki from military/camo theme to Heatwarped's
+  own identity: Y2K / 2000s underground street racing (NFS Underground
+  homage), night city Ratfield, neon underglow, PDA racing-forum chrome.
+
+  Kept from current UI (minimal-change request): dark base, ember-orange
+  primary ("Heat"), Rajdhani body font, mono micro-label convention,
+  section structure of the live homepage.
+
+  Replaced: bunker/camo greens -> night-city blue-black; Black Ops One ->
+  Chakra Petch italic (racing HUD feel); tactical HUD frames -> PDA window
+  chrome + glowing road chevrons; grid-bg -> perspective neon road floor.
+
+  Signature elements: heat-gradient display type, skewed CTA buttons,
+  PDA status card w/ scanlines + pixel labels, chevron dividers,
+  nitrous streak band. Vibe toggle bottom-right switches "retro-max"
+  (scanlines + chromatic aberration) vs default modern.
+-->
+</head>
+<body>
+
+<header class="site-header" data-screen-label="Header">
+  <div class="wrap header-row">
+    <a class="logo" href="#"><span class="logo-mark"></span>Heatwarped<b>Wiki</b></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#">Gameplay</a>
+      <a href="#">Demo</a>
+      <a href="#">Release Date</a>
+      <a href="#">Requirements</a>
+      <a href="#">Guides</a>
+    </nav>
+    <a class="btn btn-heat header-cta" href="#"><span class="btn-inner">Wishlist on Steam</span></a>
+  </div>
+</header>
+
+<section class="hero" data-screen-label="Hero">
+  <div class="hero-floor"></div>
+  <div class="hero-skyline"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow mono-label">
+        <span class="live-dot"></span>
+        Demo Available
+        <span class="sep">//</span>
+        <span class="tail">Open-world street racing · 2000s</span>
+      </div>
+      <h1 class="hero-title">Heat<br>warped</h1>
+      <p class="hero-sub">
+        Heatwarped is an open-world street racing game set in the 2000s. The official Steam listing is live, a free demo is downloadable right now, and the full release date remains <b>to be announced</b>.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-heat" href="#"><span class="btn-inner">Wishlist Heatwarped <span class="arr">»</span></span></a>
+        <a class="btn btn-line" href="#"><span class="btn-inner">Download the Demo</span></a>
+      </div>
+    </div>
+    <aside class="pda" data-screen-label="PDA status card" aria-label="Verified game status">
+      <div class="pda-bar">
+        <span class="pda-dots"><i></i><i></i><i></i></span>
+        <span class="pda-title">PDA · Racing Forum v2.3</span>
+      </div>
+      <div class="pda-body">
+        <ul class="status-list">
+          <li class="status-row"><span class="status-key">Developer</span><span class="status-val">Sealime</span></li>
+          <li class="status-row"><span class="status-key">Publisher</span><span class="status-val">Sealime</span></li>
+          <li class="status-row"><span class="status-key">Platform</span><span class="status-val">Windows PC · Steam</span></li>
+          <li class="status-row"><span class="status-key">Release Date</span><span class="status-val hot">TBA</span></li>
+          <li class="status-row"><span class="status-key">Demo</span><span class="status-val cy">Available Now</span></li>
+          <li class="status-row"><span class="status-key">Genre</span><span class="status-val">Racing · Arcade</span></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="guides" data-screen-label="Guide cards">
+    <a class="guide-card" href="#">
+      <div class="guide-tag">FILE_01 · STATUS</div>
+      <div class="guide-name">Release Date</div>
+      <p class="guide-copy">Current official release status, what TBA means, and where to watch for the launch announcement.</p>
+      <span class="guide-open">Open guide »</span>
+    </a>
+    <a class="guide-card" href="#">
+      <div class="guide-tag">FILE_02 · SPECS</div>
+      <div class="guide-name">System Requirements</div>
+      <p class="guide-copy">The minimum Windows PC specifications currently published on the official Steam listing.</p>
+      <span class="guide-open">Open guide »</span>
+    </a>
+    <a class="guide-card" href="#">
+      <div class="guide-tag">FILE_03 · DOWNLOAD</div>
+      <div class="guide-name">Demo</div>
+      <p class="guide-copy">Where to download the free Steam demo and how to install and launch it safely.</p>
+      <span class="guide-open">Open guide »</span>
+    </a>
+    <a class="guide-card" href="#">
+      <div class="guide-tag">FILE_04 · OVERVIEW</div>
+      <div class="guide-name">Gameplay</div>
+      <p class="guide-copy">A source-conscious overview of the open-world street racing concept and confirmed gameplay details.</p>
+      <span class="guide-open">Open guide »</span>
+    </a>
+  </div>
+</div>
+
+<main class="wrap article">
+  <h2 class="h2" data-screen-label="What is Heatwarped">What is Heatwarped?</h2>
+  <div class="prose">
+    <p>Heatwarped is a racing game built around an open-world street-racing premise and a deliberately <b>2000s setting</b>. That identity is not inferred from fan comparisons: the official Heatwarped social profile describes the project as an "open-world street racing game set in the 2000s." The Steam listing identifies <b>Sealime</b> as both developer and publisher, places Heatwarped in the Racing genre, and currently labels the full release date as "To be announced."</p>
+    <p>The most useful fact for players today is that Heatwarped is already playable in a limited form. The official Steam page offers a free demo, so prospective players do not need to rely on trailers or third-party impressions to decide whether the game interests them. The safest download route is the official Steam store page; this site does not mirror executables.</p>
+    <p>Community discussion frequently compares the game with early-2000s Need for Speed releases, but those comparisons are opinions rather than official product claims. Official facts come from Sealime, the Heatwarped account, Steam, and the playable demo; comparisons and player reactions are treated separately.</p>
+  </div>
+
+  <h2 class="h2">Game status at a glance</h2>
+  <table class="spec">
+    <tbody>
+      <tr><th scope="row">Developer</th><td>Sealime</td></tr>
+      <tr><th scope="row">Publisher</th><td>Sealime</td></tr>
+      <tr><th scope="row">Release date</th><td>TBA / To be announced</td></tr>
+      <tr><th scope="row">Demo</th><td>Free demo available on Steam</td></tr>
+      <tr><th scope="row">Confirmed PC OS</th><td>Windows 10 64-bit minimum</td></tr>
+      <tr><th scope="row">Multiplayer status</th><td>Not confirmed by the verified Steam data used for this guide</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="h2">What Heatwarped officially confirms today</h2>
+  <div class="confirms" data-screen-label="Confirmed cards">
+    <div class="confirm-card">
+      <span class="confirm-chip">Confirmed</span>
+      <h3>Open-world street racing</h3>
+      <p>The official Heatwarped profile explicitly describes the game as open-world street racing.</p>
+    </div>
+    <div class="confirm-card">
+      <span class="confirm-chip">Confirmed</span>
+      <h3>A 2000s setting</h3>
+      <p>The same official description places Heatwarped in the 2000s, which explains the retro presentation around the project.</p>
+    </div>
+    <div class="confirm-card">
+      <span class="confirm-chip">Confirmed</span>
+      <h3>A playable Steam demo</h3>
+      <p>The Heatwarped Steam listing currently exposes a free demo, making Steam the primary download source.</p>
+    </div>
+    <div class="confirm-card">
+      <span class="confirm-chip">Confirmed</span>
+      <h3>PC release in development</h3>
+      <p>Steam publishes Windows minimum requirements and still lists the full release date as TBA.</p>
+    </div>
+  </div>
+
+  <h2 class="h2">Why this wiki stays conservative with facts</h2>
+  <div class="prose">
+    <p>Heatwarped is new enough that search results already contain conflicting claims about release timing, platforms, vehicles, and multiplayer. This site intentionally does not turn those claims into facts. When Sealime has not announced something, the answer here will say <b>"not announced"</b> rather than fill the gap with speculation.</p>
+    <p>Each factual guide states when the information was last checked and points readers back to the official Steam listing — making Heatwarped information easier to scan without pretending an unofficial wiki is more authoritative than the developer.</p>
+  </div>
+
+  <div class="source-box">
+    <b>Source policy</b>
+    Primary sources for this page: the <a href="#">official Heatwarped Steam store page</a> and the <a href="#">official Heatwarped account</a>. Steam-derived developer, publisher, genre and release-status data were last checked on August 22, 2026.
+  </div>
+</main>
+
+<section class="cta-band" data-screen-label="CTA band">
+  <div class="wrap cta-inner">
+    <div>
+      <div class="cta-title">Start your engine.<br>Download the demo.</div>
+      <p class="cta-sub">Compare your PC with the published minimum requirements, install through Steam, and launch it from your Library.</p>
+    </div>
+    <a class="btn btn-heat" href="#"><span class="btn-inner">Get the Demo on Steam <span class="arr">»</span></span></a>
+  </div>
+</section>
+
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="#"><span class="logo-mark"></span>Heatwarped<b>Wiki</b></a>
+      <p>An unofficial, source-conscious wiki for Heatwarped — the open-world street racing game set in the 2000s by Sealime.</p>
+      <div class="chev-row" style="margin: 18px 0 0;">
+        <span class="chev c2"></span><span class="chev cy"></span><span class="chev c3"></span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="#">Release Date</a></li>
+        <li><a href="#">System Requirements</a></li>
+        <li><a href="#">Demo Guide</a></li>
+        <li><a href="#">Gameplay Overview</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Official</h4>
+      <ul>
+        <li><a href="#">Steam Store Page</a></li>
+        <li><a href="#">Heatwarped on X</a></li>
+        <li><a href="#">Reveal Trailer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Wiki</h4>
+      <ul>
+        <li><a href="#">Source Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Heatwarped Wiki. Unofficial fan project.</span>
+    <span>Heatwarped is a trademark of Sealime. Not affiliated.</span>
+  </div>
+</footer>
+
+<button class="vibe-toggle" id="vibeToggle" type="button">Vibe: Modern</button>
+
+<script>
+  (function () {
+    var btn = document.getElementById('vibeToggle');
+    var root = document.documentElement;
+    btn.addEventListener('click', function () {
+      var retro = root.getAttribute('data-vibe') === 'retro';
+      root.setAttribute('data-vibe', retro ? 'modern' : 'retro');
+      btn.textContent = retro ? 'Vibe: Modern' : 'Vibe: Retro-Max';
+    });
+  })();
+</script>
+
+</body>
+</html>
