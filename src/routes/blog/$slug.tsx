@@ -11,11 +11,21 @@ import { Footer } from '@/blocks/footer';
 import { Header } from '@/blocks/header';
 import { MarkdownContent } from '@/components/markdown-content';
 import { mdxComponents } from '@/components/mdx-components';
-import { formatPostDate, loadLocalPost } from '@/content/posts';
+import {
+  formatPostDate,
+  loadLocalPost,
+  REMOVED_TEMPLATE_BLOG_SLUGS,
+} from '@/content/posts';
 import { getBlogPostFn } from '@/content/posts/server';
+
+const removedTemplateSlugs = new Set<string>(REMOVED_TEMPLATE_BLOG_SLUGS);
 
 export const Route = createFileRoute('/blog/$slug')({
   loader: async ({ params }) => {
+    if (removedTemplateSlugs.has(params.slug)) {
+      // Permanent removal of ShipAny template posts (prefer 410 over soft 404).
+      throw new Response('Gone', { status: 410, statusText: 'Gone' });
+    }
     const locale = getLocale();
     const post = await getBlogPostFn({
       data: { slug: params.slug, locale },

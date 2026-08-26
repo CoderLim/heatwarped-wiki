@@ -16,9 +16,9 @@ function HeatwarpedHomeWithMedia() {
 export const Route = createFileRoute('/')(
   heatwarpedPageRouteOptions({
     path: '/',
-    title: 'Heatwarped Game - Open-World Street Racing | Demo, Release Date & PC Specs',
+    title: 'Heatwarped — Free Demo Download & Release Date (PC)',
     description:
-      'Heatwarped is an open-world street racing game set in the 2000s. Find the official Steam demo, current release status, PC requirements, and gameplay details.',
+      'Download the Heatwarped demo on Steam. Open-world arcade street racing game. Check PC system requirements, gameplay details, and the latest release date updates.',
     Page: HeatwarpedHomeWithMedia,
   })
 );

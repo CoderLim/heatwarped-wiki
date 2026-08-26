@@ -11,7 +11,15 @@ import { baseLocale } from '@/paraglide/runtime.js';
  * fetched through the server functions in ./server.ts and merged with the
  * local posts via the pure helpers below.
  */
-export const BLOG_POST_SLUGS = [
+/**
+ * Local MDX post slugs under `src/content/posts/<slug>.<locale>.mdx`.
+ * Keep empty until real Heatwarped articles are added — do not reintroduce
+ * ShipAny template demos (what-is-shipany, blocks-vs-components).
+ */
+export const BLOG_POST_SLUGS: readonly string[] = [];
+
+/** Permanently removed template slugs — serve 410 so crawlers drop them. */
+export const REMOVED_TEMPLATE_BLOG_SLUGS = [
   'what-is-shipany',
   'blocks-vs-components',
 ] as const;
@@ -54,7 +62,7 @@ const postModules = import.meta.glob<PostModule>('/src/content/posts/*.mdx', {
 });
 
 export function loadLocalPost(slug: string, locale: string): PostModule | null {
-  if (!BLOG_POST_SLUGS.includes(slug as (typeof BLOG_POST_SLUGS)[number])) {
+  if (!BLOG_POST_SLUGS.includes(slug)) {
     return null;
   }
   return (

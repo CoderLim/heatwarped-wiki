@@ -13,7 +13,7 @@ export const Route = createFileRoute('/robots.txt')({
           'Disallow: /settings',
           'Disallow: /api/',
           'Disallow: /*?*',
-          // Leftover Mini Wars / ShipAny template surfaces (also noindex in head)
+          // Leftover Mini Wars / ShipAny template surfaces
           'Disallow: /buildings',
           'Disallow: /strategy',
           'Disallow: /systems',
@@ -24,6 +24,9 @@ export const Route = createFileRoute('/robots.txt')({
           'Disallow: /patch-notes',
           'Disallow: /faq',
           'Disallow: /search',
+          // Removed ShipAny demo blog posts (also 410 in /blog/$slug)
+          'Disallow: /blog/what-is-shipany',
+          'Disallow: /blog/blocks-vs-components',
           '',
           `Sitemap: ${envConfigs.app_url}/sitemap.xml`,
           '',
