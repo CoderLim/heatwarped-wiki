@@ -24,7 +24,7 @@ export const Route = createFileRoute('/robots.txt')({
           'Disallow: /patch-notes',
           'Disallow: /faq',
           'Disallow: /search',
-          // Removed ShipAny demo blog posts (also 410 in /blog/$slug)
+          // Removed ShipAny demo blog posts (also 404 in /blog/$slug)
           'Disallow: /blog/what-is-shipany',
           'Disallow: /blog/blocks-vs-components',
           '',

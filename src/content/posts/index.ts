@@ -18,7 +18,7 @@ import { baseLocale } from '@/paraglide/runtime.js';
  */
 export const BLOG_POST_SLUGS: readonly string[] = [];
 
-/** Permanently removed template slugs — serve 410 so crawlers drop them. */
+/** Permanently removed template slugs — treat as not found / robots Disallow. */
 export const REMOVED_TEMPLATE_BLOG_SLUGS = [
   'what-is-shipany',
   'blocks-vs-components',

@@ -22,9 +22,10 @@ const removedTemplateSlugs = new Set<string>(REMOVED_TEMPLATE_BLOG_SLUGS);
 
 export const Route = createFileRoute('/blog/$slug')({
   loader: async ({ params }) => {
+    // Template ShipAny posts were removed — keep 404 (not soft content).
+    // Throwing Response(410) surfaces as 500 under the Workers/nitro loader path.
     if (removedTemplateSlugs.has(params.slug)) {
-      // Permanent removal of ShipAny template posts (prefer 410 over soft 404).
-      throw new Response('Gone', { status: 410, statusText: 'Gone' });
+      throw notFound();
     }
     const locale = getLocale();
     const post = await getBlogPostFn({
