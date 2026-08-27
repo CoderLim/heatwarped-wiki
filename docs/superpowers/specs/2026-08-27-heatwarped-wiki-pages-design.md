@@ -238,13 +238,14 @@ Existing cars nav links may remain; cars page body unchanged.
 ### 6.4 Implementation order
 
 1. Full `miniwars` → `heatwarped` rename (mechanical + i18n cleanup).  
-2. Rewrite `system-requirements` as independent page.  
-3. Rewrite `gameplay` as independent page.  
-4. Create `race-modes` → `map` → `customization`.  
-5. Create short `multiplayer` + light `performance`.  
-6. Enhance `demo` + light-verify `release-date`.  
-7. Enhance home + nav / sitemap / llms / cross-links.  
-8. `pnpm build` verification.
+2. Collect page imagery: Media Kit / Steam assets download + selective video frame grabs; store under `public/imgs/` (and/or R2) with provenance notes (§7).  
+3. Rewrite `system-requirements` as independent page.  
+4. Rewrite `gameplay` as independent page.  
+5. Create `race-modes` → `map` → `customization` (with stills where available).  
+6. Create short `multiplayer` + light `performance`.  
+7. Enhance `demo` + light-verify `release-date`.  
+8. Enhance home + nav / sitemap / llms / cross-links.  
+9. `pnpm build` verification.
 
 ### 6.5 Acceptance criteria
 
@@ -252,13 +253,55 @@ Existing cars nav links may remain; cars page body unchanged.
 - Five new pages reachable and in sitemap.  
 - Cars content file has no substantive diff (imports only).  
 - No invented FPS / car roster / release predictions.  
+- Guide images are official/hosted/frame-grab sourced per §7 (no hotlinked news CDNs, no AI fake gameplay stills).  
 - `rg -i miniwars src` is empty.  
 - Titles/Descriptions within SEO length targets; one H1 per page; intent answered in first paragraph.  
 - `pnpm build` passes.
 
 ---
 
-## 7. Non-goals / future
+## 7. Page imagery (required)
+
+Pages that benefit from visuals must use **real Heatwarped media**, not decorative AI filler or hotlinked news CDNs.
+
+### Source priority
+
+1. **Official Media Kit** (heatwarped.com Media Kit) — screenshots, logo, key art, press stills.  
+2. **Official Steam / SteamDB store assets** — download, host on this site (repo `public/` and/or `static.heatwarped.wiki` R2), never fragile third-party CDN URLs.  
+3. **Frame grabs from high-value videos** when a page needs a UI/mechanic that stills do not show:
+   - Official Reveal Trailer — `https://youtu.be/q7t6_ff8mlg`
+   - MSX Demo Review — `https://www.youtube.com/watch?v=-EQWpdzdopw`
+   - Other long Demo gameplay when needed for map / PDA / race UI
+4. **Hands-on article stills** (The Drive / Out of Games) — research-only unless rights/reuse is clear; prefer re-capturing the same moment from Demo/trailer yourself.
+
+### Rules
+
+- Host assets locally or on the project CDN (`static.heatwarped.wiki`); no hotlinking Steam/CDN/news images.  
+- Keep a short provenance note (source URL + what the frame shows) in code comment or adjacent caption where useful.  
+- Every `<img>`: meaningful `alt`, width/height (or aspect-stable container), prefer WebP when converting.  
+- Caption/credit must not overclaim: Steam screenshot ≠ Sealime press kit; trailer frame ≠ full-game feature confirmation.  
+- **Do not** invent or AI-generate “fake gameplay” screenshots for wiki fact pages.  
+- **Cars page:** still zero content change; do not reshuffle its existing gallery this round unless a rename path forces a mechanical path update.
+
+### Suggested placements (implementation may trim if a still cannot be obtained cleanly)
+
+| Page | Likely visuals |
+|---|---|
+| `/` | Hero / trailer still or existing hero video; optional official store key art |
+| `/demo/` | Official embed (already) + optional Demo UI still |
+| `/gameplay/` | Reveal Trailer embed + optional driving / PDA still |
+| `/race-modes/` | Frames or Steam stills that show race HUD / mode identity when available |
+| `/map/` | City / Ratfield / PDA map frame |
+| `/customization/` | Garage / body kit / vinyl / underglow frame |
+| `/system-requirements/` | Usually table-first; optional Authentic vs Enhanced still only if clearly labeled in-game |
+| `/multiplayer/` | Usually text-first; no fake lobby screenshot |
+| `/performance/` | Text-first; no fake FPS overlay |
+
+If a needed frame cannot be captured at acceptable quality, ship the page with text + official embeds first and leave a tracked follow-up — do not pad with unrelated stock art.
+
+---
+
+## 8. Non-goals / future
 
 - `/performance/` community hardware table waits for 5–10 sourced FPS rows.  
 - `/cars/` content expansion waits for in-game official names (page already exists; not edited this round).  
@@ -267,7 +310,7 @@ Existing cars nav links may remain; cars page body unchanged.
 
 ---
 
-## 8. Decisions log
+## 9. Decisions log
 
 | Decision | Choice |
 |---|---|
@@ -277,3 +320,4 @@ Existing cars nav links may remain; cars page body unchanged.
 | MiniWars branding | **A** — full rename/removal |
 | Cars | Do not touch content |
 | Research plan | Authoritative for facts this round |
+| Imagery | From official assets / research materials / video frame grabs; host locally; no AI fake screenshots |
