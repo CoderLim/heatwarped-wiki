@@ -11,6 +11,8 @@ const STATIC_PATHS = [
   '/demo',
   '/gameplay',
   '/cars',
+  '/about',
+  '/contact',
   '/source-policy',
   '/privacy-policy',
   '/terms-of-service',

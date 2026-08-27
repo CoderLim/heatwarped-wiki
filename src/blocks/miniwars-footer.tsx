@@ -23,6 +23,8 @@ export function MiniWarsFooterBlock() {
         { href: X_URL, label: 'Heatwarped on X', external: true },
       ]}
       legalLinks={[
+        { href: '/about', label: 'About' },
+        { href: '/contact', label: 'Contact' },
         { href: '/source-policy', label: 'Source Policy' },
         { href: '/privacy-policy', label: 'Privacy Policy' },
         { href: '/terms-of-service', label: 'Terms of Use' },

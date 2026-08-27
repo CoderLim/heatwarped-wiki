@@ -1,12 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { miniWarsPageRouteOptions } from '@/components/miniwars/mini-wars-page-route';
-import { SystemsPage } from '@/components/miniwars/pages';
+import { redirectToHome } from '@/lib/legacy-redirect';
 
-export const Route = createFileRoute('/systems')(
-  miniWarsPageRouteOptions({
-    path: '/systems',
-    key: 'systems',
-    Page: SystemsPage,
-  })
-);
+export const Route = createFileRoute('/systems')({
+  beforeLoad: () => redirectToHome(),
+});

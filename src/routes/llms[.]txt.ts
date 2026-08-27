@@ -32,6 +32,21 @@ const STATIC_PAGES: { path: string; title: string; description: string }[] = [
     description: 'Source-conscious overview of confirmed gameplay details.',
   },
   {
+    path: '/cars',
+    title: 'Heatwarped Car List',
+    description: 'Confirmed and rumored vehicles with source labels.',
+  },
+  {
+    path: '/about',
+    title: 'About',
+    description: 'Unofficial fan wiki disclaimer and editorial purpose.',
+  },
+  {
+    path: '/contact',
+    title: 'Contact',
+    description: 'Email for corrections, privacy, and rights-holder requests.',
+  },
+  {
     path: '/source-policy',
     title: 'Source Policy',
     description: 'How this wiki verifies facts from Steam and official channels.',

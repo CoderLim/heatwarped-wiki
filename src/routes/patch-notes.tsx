@@ -1,12 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { miniWarsPageRouteOptions } from '@/components/miniwars/mini-wars-page-route';
-import { PatchNotesPage } from '@/components/miniwars/pages';
+import { redirectToHome } from '@/lib/legacy-redirect';
 
-export const Route = createFileRoute('/patch-notes')(
-  miniWarsPageRouteOptions({
-    path: '/patch-notes',
-    key: 'patch_notes',
-    Page: PatchNotesPage,
-  })
-);
+export const Route = createFileRoute('/patch-notes')({
+  beforeLoad: () => redirectToHome(),
+});
