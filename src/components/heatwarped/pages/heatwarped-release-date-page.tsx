@@ -217,6 +217,25 @@ export function HeatwarpedReleaseDatePage() {
         </Paragraph>
         <div className="mt-5 space-y-4">
           <section className="border-camo-800 bg-bunker-900/45 border p-5">
+            <div className="text-ember-400 font-mono text-[11px] tracking-[0.3em] uppercase">
+              June 12, 2026
+            </div>
+            <h3 className="font-display text-sand-100 mt-2 text-xl tracking-wider uppercase">
+              Heatwarped first detected in Steam metadata
+            </h3>
+            <p className="text-bunker-300 mt-2 leading-7">
+              SteamDB records show Heatwarped was first detected in Steam
+              metadata on June 12, 2026. That timestamp is a database first-seen
+              date — not an official Sealime announcement date.
+            </p>
+            <div className="mt-3 text-sm">
+              <ExternalSource href={STEAMDB_GAME_URL}>
+                SteamDB Heatwarped app record
+              </ExternalSource>
+            </div>
+          </section>
+
+          <section className="border-camo-800 bg-bunker-900/45 border p-5">
             <div className="text-ember-400 font-mono text-[11px] tracking-widest uppercase">
               August 21, 2026
             </div>

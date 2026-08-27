@@ -1,1 +1,1 @@
-export { HeatwarpedHomePage as HomePage } from './heatwarped-content-pages';
+export { HeatwarpedHomePage as HomePage } from './heatwarped-home-page';

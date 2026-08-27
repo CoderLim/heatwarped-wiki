@@ -211,6 +211,79 @@ export function HeatwarpedDemoPage() {
           download package.
         </Paragraph>
 
+        <H2>What is included in the current Heatwarped demo?</H2>
+        <Paragraph>
+          Official sources confirm that a free Heatwarped demo exists on Steam.
+          The list below separates that Official fact from Current Demo verified
+          race modes and hands-on observations. None of these Demo details
+          should be read as a sealed final-game content list.
+        </Paragraph>
+        <ul className="text-bunker-200 mt-4 list-disc space-y-3 pl-6 text-base leading-8">
+          <li>
+            Single-player events in a Demo-sized open-world city chunk (hands-on
+            observation).
+          </li>
+          <li>
+            Current Demo verified race modes: City Circuit, City Sprint, City
+            Time Trial, and City Track Drift — see the{' '}
+            <Link
+              className="text-ember-400 underline underline-offset-4"
+              href="/race-modes"
+            >
+              race modes guide
+            </Link>
+            .
+          </li>
+          <li>
+            Nitrous / NOS availability during Demo races (Current Demo
+            verified).
+          </li>
+          <li>
+            One currently observed playable fictional car — not an official
+            licensed roster entry.
+          </li>
+          <li>
+            Customization preview (body kits, vinyls, underglow, and performance
+            upgrades observed in hands-on coverage) — see{' '}
+            <Link
+              className="text-ember-400 underline underline-offset-4"
+              href="/customization"
+            >
+              customization
+            </Link>
+            .
+          </li>
+          <li>
+            Map / neighborhood observations such as Ashtray — see the{' '}
+            <Link
+              className="text-ember-400 underline underline-offset-4"
+              href="/map"
+            >
+              map guide
+            </Link>
+            .
+          </li>
+        </ul>
+        <Paragraph>
+          One hands-on reviewer reported roughly an hour of race content in the
+          current demo; actual playtime will vary. Demo progress carry-over to
+          the full game remains unconfirmed.
+        </Paragraph>
+        <figure className="border-camo-800 bg-bunker-900/45 mt-6 overflow-hidden border">
+          <img
+            src="/imgs/guides/demo-open-world.webp"
+            alt="Heatwarped Demo open-world city skyline with a car on wet streets"
+            width={1280}
+            height={720}
+            className="h-auto w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="text-bunker-400 border-camo-800 border-t px-4 py-3 text-sm leading-6">
+            Official Steam screenshot — Demo open-world city visual context.
+          </figcaption>
+        </figure>
+
         <H2>Heatwarped demo PC requirements</H2>
         <Paragraph>
           The current official Heatwarped Steam page publishes both minimum and
@@ -278,11 +351,11 @@ export function HeatwarpedDemoPage() {
           environments, and a soundtrack built around racing and night driving.
         </Paragraph>
         <Paragraph>
-          The official sources checked for this page do not publish a complete
-          written inventory of every demo race, car, map boundary, unlock,
-          playtime estimate, or save-transfer rule. This page therefore avoids
-          presenting third-party observations as developer-confirmed demo scope.
-          For a broader look at the confirmed game concept, see the{' '}
+          Official sources still do not publish a complete written inventory of
+          every Demo race, unlock, or save-transfer rule. Specific Demo race
+          modes and related systems are labeled Current Demo verified or
+          hands-on on this page — not as Sealime&apos;s final content list. For
+          the broader game concept, see the{' '}
           <Link
             className="text-ember-400 underline underline-offset-4"
             href="/gameplay"
