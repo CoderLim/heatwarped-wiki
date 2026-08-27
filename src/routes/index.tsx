@@ -1,17 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { heatwarpedPageRouteOptions } from '@/components/miniwars/heatwarped-page-route';
-import { OfficialHeatwarpedMedia } from '@/components/miniwars/official-heatwarped-media';
 import { HomePage } from '@/components/miniwars/pages';
-
-function HeatwarpedHomeWithMedia() {
-  return (
-    <>
-      <HomePage />
-      <OfficialHeatwarpedMedia variant="home" />
-    </>
-  );
-}
 
 export const Route = createFileRoute('/')(
   heatwarpedPageRouteOptions({
@@ -19,6 +9,6 @@ export const Route = createFileRoute('/')(
     title: 'Heatwarped — Free Demo Download & Release Date (PC)',
     description:
       'Download the Heatwarped demo on Steam. Open-world arcade street racing game. Check PC system requirements, gameplay details, and the latest release date updates.',
-    Page: HeatwarpedHomeWithMedia,
+    Page: HomePage,
   })
 );

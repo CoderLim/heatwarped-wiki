@@ -2,24 +2,15 @@ import { useState } from 'react';
 import { ExternalLink, Play } from 'lucide-react';
 
 const STEAM_URL = 'https://store.steampowered.com/app/4846360/Heatwarped/';
-const TRAILER_URL = 'https://youtu.be/q7t6_ff8mlg';
-const TRAILER_VIDEO_ID = 'q7t6_ff8mlg';
-const TRAILER_POSTER = `https://i.ytimg.com/vi/${TRAILER_VIDEO_ID}/maxresdefault.jpg`;
+const DEMO_TRAILER_URL = 'https://youtu.be/kWhpv8rf094';
+const DEMO_TRAILER_VIDEO_ID = 'kWhpv8rf094';
+const GAMEPLAY_TRAILER_URL = 'https://youtu.be/q7t6_ff8mlg';
+const GAMEPLAY_TRAILER_VIDEO_ID = 'q7t6_ff8mlg';
 const STEAM_ART = 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4846360/capsule_616x353.jpg';
 
-type MediaVariant = 'home' | 'release-date' | 'system-requirements' | 'demo' | 'gameplay';
+type MediaVariant = 'release-date' | 'system-requirements' | 'demo' | 'gameplay';
 
 const media = {
-  home: {
-    title: 'Official Heatwarped reveal trailer',
-    description:
-      'Watch the official Heatwarped reveal trailer — first-party footage of the open-world street racing demo and presentation.',
-    image: STEAM_ART,
-    alt: 'Heatwarped official reveal trailer',
-    href: TRAILER_URL,
-    source: 'Official trailer',
-    video: true,
-  },
   'release-date': {
     title: 'Heatwarped release status source',
     description: 'Steam is the primary source for the current Heatwarped release status.',
@@ -40,13 +31,15 @@ const media = {
     video: false,
   },
   demo: {
-    title: 'Watch the official Heatwarped reveal trailer',
-    description: 'Official video context before downloading the Heatwarped demo from Steam.',
+    title: 'Heatwarped Demo Gameplay',
+    description: '',
     image: STEAM_ART,
-    alt: 'Heatwarped demo and gameplay shown in the official reveal trailer',
-    href: TRAILER_URL,
+    alt: 'Heatwarped Demo Gameplay',
+    href: DEMO_TRAILER_URL,
     source: 'Official trailer',
     video: true,
+    videoId: DEMO_TRAILER_VIDEO_ID,
+    hideEyebrow: true,
   },
   gameplay: {
     title: 'Heatwarped gameplay in the official reveal trailer',
@@ -54,23 +47,34 @@ const media = {
       'The official reveal trailer is a first-party visual reference for Heatwarped gameplay while development continues.',
     image: STEAM_ART,
     alt: 'Heatwarped gameplay in the official reveal trailer',
-    href: TRAILER_URL,
+    href: GAMEPLAY_TRAILER_URL,
     source: 'Official trailer',
     video: true,
+    videoId: GAMEPLAY_TRAILER_VIDEO_ID,
   },
 } satisfies Record<
   MediaVariant,
-  { title: string; description: string; image: string; alt: string; href: string; source: string; video: boolean }
+  {
+    title: string;
+    description: string;
+    image: string;
+    alt: string;
+    href: string;
+    source: string;
+    video: boolean;
+    videoId?: string;
+    hideEyebrow?: boolean;
+  }
 >;
 
-function LazyYouTubePlayer({ title }: { title: string }) {
+function LazyYouTubePlayer({ title, videoId }: { title: string; videoId: string }) {
   const [active, setActive] = useState(false);
 
   if (active) {
     return (
       <div className="relative aspect-video w-full">
         <iframe
-          src={`https://www.youtube.com/embed/${TRAILER_VIDEO_ID}?autoplay=1`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
           title={title}
           className="absolute inset-0 h-full w-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -89,7 +93,7 @@ function LazyYouTubePlayer({ title }: { title: string }) {
       onClick={() => setActive(true)}
     >
       <img
-        src={TRAILER_POSTER}
+        src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
         alt=""
         aria-hidden="true"
         width={1280}
@@ -110,17 +114,21 @@ export function OfficialHeatwarpedMedia({ variant }: { variant: MediaVariant }) 
   return (
     <section className="mx-auto max-w-5xl px-4 pt-2 pb-12" aria-labelledby={`official-media-${variant}`}>
       <div className="border-camo-800 bg-bunker-900/35 border p-5 md:p-6">
-        <div className="text-ember-500 font-mono text-[11px] tracking-[0.3em] uppercase">Official media</div>
+        {!item.hideEyebrow ? (
+          <div className="text-ember-500 font-mono text-[11px] tracking-[0.3em] uppercase">Official media</div>
+        ) : null}
         <h2
           id={`official-media-${variant}`}
-          className="font-display text-sand-100 mt-2 text-2xl tracking-wider uppercase md:text-3xl"
+          className={`font-display text-sand-100 text-2xl tracking-wider uppercase md:text-3xl${item.hideEyebrow ? '' : ' mt-2'}`}
         >
           {item.title}
         </h2>
-        <p className="text-bunker-300 mt-3 max-w-3xl text-sm leading-7 md:text-base">{item.description}</p>
+        {item.description ? (
+          <p className="text-bunker-300 mt-3 max-w-3xl text-sm leading-7 md:text-base">{item.description}</p>
+        ) : null}
         <figure className="border-camo-800 bg-bunker-950/50 mt-5 overflow-hidden border">
-          {item.video ? (
-            <LazyYouTubePlayer title={item.alt} />
+          {item.video && item.videoId ? (
+            <LazyYouTubePlayer title={item.alt} videoId={item.videoId} />
           ) : (
             <a href={item.href} target="_blank" rel="noreferrer" className="group relative block overflow-hidden">
               <img

@@ -5,6 +5,7 @@ import {
   HEATWARPED_HERO_VIDEO,
   HeroBackgroundVideo,
 } from '@/components/miniwars/hero-background-video';
+import { OfficialHeatwarpedMedia } from '@/components/miniwars/official-heatwarped-media';
 import { envConfigs } from '@/config';
 import { Link } from '@/core/i18n/navigation';
 
@@ -458,6 +459,7 @@ export function HeatwarpedDemoPage() {
         title="Heatwarped Demo"
         intro="The Heatwarped demo is available free on Steam. Use the official store page to download, install, and play the current public Heatwarped preview on Windows PC."
       />
+      <OfficialHeatwarpedMedia variant="demo" />
       <Article>
         <div className="border-ember-500/60 bg-ember-500/5 flex flex-col gap-4 border p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
