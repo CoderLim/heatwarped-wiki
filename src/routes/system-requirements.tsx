@@ -1,14 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { heatwarpedPageRouteOptions } from '@/components/heatwarped/heatwarped-page-route';
-import { HeatwarpedSystemRequirementsPage } from '@/components/heatwarped/pages/heatwarped-content-pages';
+import { HeatwarpedSystemRequirementsPage } from '@/components/heatwarped/pages/heatwarped-system-requirements-page';
 
 export const Route = createFileRoute('/system-requirements')(
   heatwarpedPageRouteOptions({
     path: '/system-requirements',
-    title: 'Heatwarped System Requirements - Minimum PC Specs Guide',
+    title: 'Heatwarped System Requirements - Min & Recommended Specs',
     description:
-      'Heatwarped system requirements on Steam list Windows 10 64-bit, AMD FX 8320 or Intel i5-3570K, 4 GB RAM, and a DirectX 11-capable GPU for the PC demo.',
+      'Heatwarped system requirements from Steam: minimum and recommended PC specs, Authentic vs Enhanced targets, storage size, and CPU notes for the demo.',
     Page: HeatwarpedSystemRequirementsPage,
   })
 );
