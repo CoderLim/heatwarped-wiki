@@ -13,15 +13,15 @@ export function HeatwarpedFooterBlock() {
       legalTitle="Wiki"
       codexLinks={[
         { href: '/release-date', label: 'Release Date' },
-        { href: '/system-requirements', label: 'System Requirements' },
         { href: '/demo', label: 'Demo Guide' },
+        { href: '/system-requirements', label: 'System Requirements' },
         { href: '/gameplay', label: 'Gameplay Overview' },
-        { href: '/race-modes', label: 'Race Modes' },
+        { href: '/cars', label: 'Car List' },
         { href: '/map', label: 'Map' },
         { href: '/customization', label: 'Customization' },
+        { href: '/race-modes', label: 'Race Modes' },
         { href: '/multiplayer', label: 'Multiplayer' },
         { href: '/performance', label: 'Performance' },
-        { href: '/cars', label: 'Car List' },
       ]}
       playerLinks={[
         { href: STEAM_URL, label: 'Steam Store Page', external: true },
