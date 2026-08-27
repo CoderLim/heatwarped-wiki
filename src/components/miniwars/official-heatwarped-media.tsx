@@ -40,6 +40,7 @@ const media = {
     video: true,
     videoId: DEMO_TRAILER_VIDEO_ID,
     hideEyebrow: true,
+    hideCaption: true,
   },
   gameplay: {
     title: 'Heatwarped gameplay in the official reveal trailer',
@@ -64,6 +65,7 @@ const media = {
     video: boolean;
     videoId?: string;
     hideEyebrow?: boolean;
+    hideCaption?: boolean;
   }
 >;
 
@@ -142,18 +144,20 @@ export function OfficialHeatwarpedMedia({ variant }: { variant: MediaVariant }) 
               />
             </a>
           )}
-          <figcaption className="text-bunker-300 flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-xs leading-5">
-            <span>{item.alt}.</span>
-            <a
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-ember-400 hover:text-ember-300 inline-flex items-center gap-1 font-mono tracking-wider uppercase"
-            >
-              Source: {item.source}
-              <ExternalLink className="h-3 w-3" />
-            </a>
-          </figcaption>
+          {!item.hideCaption ? (
+            <figcaption className="text-bunker-300 flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-xs leading-5">
+              <span>{item.alt}.</span>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-ember-400 hover:text-ember-300 inline-flex items-center gap-1 font-mono tracking-wider uppercase"
+              >
+                Source: {item.source}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </figcaption>
+          ) : null}
         </figure>
       </div>
     </section>
