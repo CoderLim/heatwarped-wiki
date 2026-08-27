@@ -16,6 +16,11 @@ export function HeatwarpedFooterBlock() {
         { href: '/system-requirements', label: 'System Requirements' },
         { href: '/demo', label: 'Demo Guide' },
         { href: '/gameplay', label: 'Gameplay Overview' },
+        { href: '/race-modes', label: 'Race Modes' },
+        { href: '/map', label: 'Map' },
+        { href: '/customization', label: 'Customization' },
+        { href: '/multiplayer', label: 'Multiplayer' },
+        { href: '/performance', label: 'Performance' },
         { href: '/cars', label: 'Car List' },
       ]}
       playerLinks={[

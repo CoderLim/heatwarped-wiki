@@ -14,12 +14,14 @@ const STATIC_PAGES: { path: string; title: string; description: string }[] = [
   {
     path: '/release-date',
     title: 'Heatwarped Release Date',
-    description: 'Official release status (TBA) and where to watch for announcements.',
+    description:
+      'Official release status (TBA) and where to watch for announcements.',
   },
   {
     path: '/system-requirements',
     title: 'Heatwarped System Requirements',
-    description: 'Minimum Windows PC specs from the official Steam listing.',
+    description:
+      'Minimum and recommended Windows PC specs from the official Steam listing.',
   },
   {
     path: '/demo',
@@ -30,6 +32,36 @@ const STATIC_PAGES: { path: string; title: string; description: string }[] = [
     path: '/gameplay',
     title: 'Heatwarped Gameplay',
     description: 'Source-conscious overview of confirmed gameplay details.',
+  },
+  {
+    path: '/race-modes',
+    title: 'Heatwarped Race Modes',
+    description:
+      'Official many-modes status plus Demo-verified Circuit, Sprint, Time Trial, and Drift.',
+  },
+  {
+    path: '/map',
+    title: 'Heatwarped Map',
+    description:
+      'Ratfield open-world map facts: city, outskirts, Demo observations, and unknowns.',
+  },
+  {
+    path: '/customization',
+    title: 'Heatwarped Customization',
+    description:
+      'Deep customization, rare car parts, and Demo-observed visual and performance upgrades.',
+  },
+  {
+    path: '/multiplayer',
+    title: 'Heatwarped Multiplayer',
+    description:
+      'Online challenges on the official site versus Steam Single-player feature listing.',
+  },
+  {
+    path: '/performance',
+    title: 'Heatwarped Performance',
+    description:
+      'Official 1080p performance targets, Authentic vs Enhanced, and CPU-dependent notes.',
   },
   {
     path: '/cars',
@@ -49,7 +81,8 @@ const STATIC_PAGES: { path: string; title: string; description: string }[] = [
   {
     path: '/source-policy',
     title: 'Source Policy',
-    description: 'How this wiki verifies facts from Steam and official channels.',
+    description:
+      'How this wiki verifies facts from Steam and official channels.',
   },
   {
     path: '/privacy-policy',
