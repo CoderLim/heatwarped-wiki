@@ -1,13 +1,13 @@
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 
-export type MiniWarsFooterLink = {
+export type HeatwarpedFooterLink = {
   href: string;
   label: string;
   external?: boolean;
 };
 
-export function MiniWarsFooter({
+export function HeatwarpedFooter({
   blurb,
   disclaimer,
   codexTitle,
@@ -24,9 +24,9 @@ export function MiniWarsFooter({
   codexTitle: string;
   playersTitle: string;
   legalTitle: string;
-  codexLinks: MiniWarsFooterLink[];
-  playerLinks: MiniWarsFooterLink[];
-  legalLinks: MiniWarsFooterLink[];
+  codexLinks: HeatwarpedFooterLink[];
+  playerLinks: HeatwarpedFooterLink[];
+  legalLinks: HeatwarpedFooterLink[];
   copyright: string;
   builtWith: string;
 }) {

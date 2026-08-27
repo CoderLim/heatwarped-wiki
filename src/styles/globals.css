@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@import './miniwars-fonts.css';
+@import './heatwarped-fonts.css';
 
 @custom-variant dark (&:is(.dark *));
 
 /* Ratfield Night font vars (Heatwarped Y2K street-racing theme).
    Display: Chakra Petch italic. Pixel accents: VT323. Body: Rajdhani.
-   All resolve via public-name aliases in miniwars-fonts.css. */
+   All resolve via public-name aliases in heatwarped-fonts.css. */
 :root {
   --font-display: 'Chakra Petch', Impact, sans-serif;
   --font-sans: 'Rajdhani', system-ui, sans-serif;
@@ -175,7 +175,11 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     background-image:
-      radial-gradient(at 50% 0%, rgba(96, 130, 190, 0.13), rgba(0, 0, 0, 0) 50%),
+      radial-gradient(
+        at 50% 0%,
+        rgba(96, 130, 190, 0.13),
+        rgba(0, 0, 0, 0) 50%
+      ),
       radial-gradient(
         at 100% 100%,
         rgba(232, 93, 58, 0.08),

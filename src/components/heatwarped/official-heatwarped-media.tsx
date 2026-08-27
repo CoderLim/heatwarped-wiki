@@ -6,14 +6,20 @@ const DEMO_TRAILER_URL = 'https://youtu.be/kWhpv8rf094';
 const DEMO_TRAILER_VIDEO_ID = 'kWhpv8rf094';
 const GAMEPLAY_TRAILER_URL = 'https://youtu.be/q7t6_ff8mlg';
 const GAMEPLAY_TRAILER_VIDEO_ID = 'q7t6_ff8mlg';
-const STEAM_ART = 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4846360/capsule_616x353.jpg';
+const STEAM_ART =
+  'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4846360/capsule_616x353.jpg';
 
-type MediaVariant = 'release-date' | 'system-requirements' | 'demo' | 'gameplay';
+type MediaVariant =
+  | 'release-date'
+  | 'system-requirements'
+  | 'demo'
+  | 'gameplay';
 
 const media = {
   'release-date': {
     title: 'Heatwarped release status source',
-    description: 'Steam is the primary source for the current Heatwarped release status.',
+    description:
+      'Steam is the primary source for the current Heatwarped release status.',
     image: STEAM_ART,
     alt: 'Heatwarped official Steam artwork for the release date page',
     href: STEAM_URL,
@@ -69,7 +75,13 @@ const media = {
   }
 >;
 
-function LazyYouTubePlayer({ title, videoId }: { title: string; videoId: string }) {
+function LazyYouTubePlayer({
+  title,
+  videoId,
+}: {
+  title: string;
+  videoId: string;
+}) {
   const [active, setActive] = useState(false);
 
   if (active) {
@@ -111,28 +123,44 @@ function LazyYouTubePlayer({ title, videoId }: { title: string; videoId: string 
   );
 }
 
-export function OfficialHeatwarpedMedia({ variant }: { variant: MediaVariant }) {
+export function OfficialHeatwarpedMedia({
+  variant,
+}: {
+  variant: MediaVariant;
+}) {
   const item = media[variant];
   return (
-    <section className="mx-auto max-w-5xl px-4 pt-2 pb-12" aria-labelledby={`official-media-${variant}`}>
+    <section
+      className="mx-auto max-w-5xl px-4 pt-2 pb-12"
+      aria-labelledby={`official-media-${variant}`}
+    >
       <div className="border-camo-800 bg-bunker-900/35 border p-5 md:p-6">
         {!item.hideEyebrow ? (
-          <div className="text-ember-500 font-mono text-[11px] tracking-[0.3em] uppercase">Official media</div>
+          <div className="text-ember-500 font-mono text-[11px] tracking-[0.3em] uppercase">
+            Official media
+          </div>
         ) : null}
         <h2
           id={`official-media-${variant}`}
-          className={`font-display text-sand-100 text-2xl tracking-wider uppercase md:text-3xl${item.hideEyebrow ? '' : ' mt-2'}`}
+          className={`font-display text-sand-100 text-2xl tracking-wider uppercase md:text-3xl${item.hideEyebrow ? '' : 'mt-2'}`}
         >
           {item.title}
         </h2>
         {item.description ? (
-          <p className="text-bunker-300 mt-3 max-w-3xl text-sm leading-7 md:text-base">{item.description}</p>
+          <p className="text-bunker-300 mt-3 max-w-3xl text-sm leading-7 md:text-base">
+            {item.description}
+          </p>
         ) : null}
         <figure className="border-camo-800 bg-bunker-950/50 mt-5 overflow-hidden border">
           {item.video && item.videoId ? (
             <LazyYouTubePlayer title={item.alt} videoId={item.videoId} />
           ) : (
-            <a href={item.href} target="_blank" rel="noreferrer" className="group relative block overflow-hidden">
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative block overflow-hidden"
+            >
               <img
                 src={item.image}
                 alt={item.alt}

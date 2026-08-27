@@ -10,7 +10,9 @@ const MUIRA_GARAGE_IMAGE = import.meta.env.PROD
   ? `${R2_PUBLIC_ORIGIN}/heatwarped/cars/muira-garage.jpg`
   : '/imgs/cars/muira-garage.jpg';
 const carImg = (path: string) =>
-  import.meta.env.PROD ? `${R2_PUBLIC_ORIGIN}/heatwarped/cars/${path}` : `/imgs/cars/${path}`;
+  import.meta.env.PROD
+    ? `${R2_PUBLIC_ORIGIN}/heatwarped/cars/${path}`
+    : `/imgs/cars/${path}`;
 const VERIFIED_DATE = 'August 27, 2026';
 const MODIFIED_DATE = '2026-08-27';
 const REVEAL_TRAILER_HLS =
@@ -69,7 +71,13 @@ const unidentifiedCars = [
   },
 ] as const;
 
-function ExternalSource({ href, children }: { href: string; children: React.ReactNode }) {
+function ExternalSource({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <a
       className="text-ember-400 hover:text-ember-300 inline-flex items-center gap-1 underline underline-offset-4"
@@ -157,7 +165,7 @@ function UnidentifiedCarsGallery() {
             key={car.id}
             className="border-camo-800 bg-bunker-900/45 grid gap-4 border p-4 md:grid-cols-[14rem_1fr] md:p-5"
           >
-            <figure className="border-camo-800 overflow-hidden border bg-bunker-950">
+            <figure className="border-camo-800 bg-bunker-950 overflow-hidden border">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in text-left"
@@ -173,7 +181,7 @@ function UnidentifiedCarsGallery() {
                   loading="lazy"
                   decoding="async"
                 />
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent px-2 py-2 font-mono text-[10px] tracking-widest text-sand-100/90 uppercase opacity-0 transition group-hover:opacity-100">
+                <span className="text-sand-100/90 pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent px-2 py-2 font-mono text-[10px] tracking-widest uppercase opacity-0 transition group-hover:opacity-100">
                   Click to enlarge
                 </span>
               </button>
@@ -185,7 +193,9 @@ function UnidentifiedCarsGallery() {
               <h3 className="font-display text-sand-100 mt-2 text-xl tracking-wider uppercase">
                 {car.label}
               </h3>
-              <p className="text-bunker-300 mt-2 text-sm leading-7">{car.source}</p>
+              <p className="text-bunker-300 mt-2 text-sm leading-7">
+                {car.source}
+              </p>
               <a
                 className="text-ember-400 hover:text-ember-300 mt-3 inline-flex items-center gap-1 text-sm underline underline-offset-4"
                 href={car.href}
@@ -209,7 +219,7 @@ function UnidentifiedCarsGallery() {
         >
           <button
             type="button"
-            className="text-sand-100 hover:bg-bunker-800 absolute top-4 right-4 inline-flex h-10 w-10 items-center justify-center border border-camo-700 bg-bunker-950/80"
+            className="text-sand-100 hover:bg-bunker-800 border-camo-700 bg-bunker-950/80 absolute top-4 right-4 inline-flex h-10 w-10 items-center justify-center border"
             aria-label="Close enlarged image"
             onClick={() => setActiveId(null)}
           >
@@ -251,7 +261,8 @@ export function HeatwarpedCarsPage() {
         item: {
           '@type': 'Vehicle',
           name: 'Ford F-150 (2004)',
-          description: 'Unplayable traffic/NPC vehicle reported in the current demo context.',
+          description:
+            'Unplayable traffic/NPC vehicle reported in the current demo context.',
         },
       },
       {
@@ -260,7 +271,8 @@ export function HeatwarpedCarsPage() {
         item: {
           '@type': 'Vehicle',
           name: 'Ford Focus (2008)',
-          description: 'Unplayable traffic/NPC vehicle reported in the current demo context.',
+          description:
+            'Unplayable traffic/NPC vehicle reported in the current demo context.',
         },
       },
       {
@@ -269,7 +281,8 @@ export function HeatwarpedCarsPage() {
         item: {
           '@type': 'Vehicle',
           name: 'Volkswagen Golf (2003)',
-          description: 'Unplayable traffic/NPC vehicle reported in the current demo context.',
+          description:
+            'Unplayable traffic/NPC vehicle reported in the current demo context.',
         },
       },
     ],
@@ -316,9 +329,13 @@ export function HeatwarpedCarsPage() {
             Heatwarped Car List
           </h1>
           <p className="text-bunker-200 mt-6 max-w-3xl text-lg leading-8">
-            Every confirmed and rumored vehicle tracked for Heatwarped — the demo&apos;s playable car, NPC
-            traffic cars, and unidentified trailer sightings. Full release remains{' '}
-            <Link className="text-ember-400 underline underline-offset-4" href="/release-date">
+            Every confirmed and rumored vehicle tracked for Heatwarped — the
+            demo&apos;s playable car, NPC traffic cars, and unidentified trailer
+            sightings. Full release remains{' '}
+            <Link
+              className="text-ember-400 underline underline-offset-4"
+              href="/release-date"
+            >
               TBA
             </Link>{' '}
             on Steam.
@@ -338,16 +355,21 @@ export function HeatwarpedCarsPage() {
             Heatwarped Car List — Every Confirmed &amp; Rumored Vehicle
           </h2>
           <p className="text-bunker-200 mt-4 text-base leading-8">
-            <strong className="text-sand-100">Quick answer:</strong> Current reporting points to{' '}
-            <strong className="text-sand-100">1 playable car</strong> in the Heatwarped demo — the
-            &quot;Muira,&quot; a fictional ride often described as inspired by the Nissan 240SX and Lexus SC.
-            Three NPC traffic cars are also commonly listed, and additional trailer vehicles remain
-            unidentified. The full game release date is still{' '}
+            <strong className="text-sand-100">Quick answer:</strong> Current
+            reporting points to{' '}
+            <strong className="text-sand-100">1 playable car</strong> in the
+            Heatwarped demo — the &quot;Muira,&quot; a fictional ride often
+            described as inspired by the Nissan 240SX and Lexus SC. Three NPC
+            traffic cars are also commonly listed, and additional trailer
+            vehicles remain unidentified. The full game release date is still{' '}
             <strong className="text-sand-100">TBA</strong> on PC (Steam).
           </p>
         </header>
 
-        <nav aria-label="On this page" className="border-camo-800 bg-bunker-900/45 mt-8 border p-5">
+        <nav
+          aria-label="On this page"
+          className="border-camo-800 bg-bunker-900/45 mt-8 border p-5"
+        >
           <div className="text-camo-300 mb-3 font-mono text-[11px] tracking-widest uppercase">
             On this page
           </div>
@@ -386,7 +408,8 @@ export function HeatwarpedCarsPage() {
                 <td className="text-sand-100 px-4 py-3 font-medium">Muira</td>
                 <td className="text-bunker-100 px-4 py-3">Playable (demo)</td>
                 <td className="text-bunker-200 px-4 py-3">
-                  Nissan 240SX × Lexus SC — fictional homage (not treated as a licensed brand claim)
+                  Nissan 240SX × Lexus SC — fictional homage (not treated as a
+                  licensed brand claim)
                 </td>
               </tr>
             </tbody>
@@ -407,18 +430,22 @@ export function HeatwarpedCarsPage() {
           </figcaption>
         </figure>
         <Paragraph>
-          Hands-on coverage often describes the demo as shipping with a single playable vehicle. Some
-          databases list a &quot;Nissan 240SX — Miura&quot;-style label, while other write-ups call it a{' '}
+          Hands-on coverage often describes the demo as shipping with a single
+          playable vehicle. Some databases list a &quot;Nissan 240SX —
+          Miura&quot;-style label, while other write-ups call it a{' '}
           <strong className="text-sand-100">
-            fictional car that looks like a cross between a Nissan 240SX and a Lexus SC
+            fictional car that looks like a cross between a Nissan 240SX and a
+            Lexus SC
           </strong>
-          . That framing suggests Heatwarped leans on <em>inspired-by</em> fictional hero cars rather than a
-          confirmed licensed real-world roster — with the &quot;Muira&quot; name also echoing the iconic
-          Lamborghini Miura.
+          . That framing suggests Heatwarped leans on <em>inspired-by</em>{' '}
+          fictional hero cars rather than a confirmed licensed real-world roster
+          — with the &quot;Muira&quot; name also echoing the iconic Lamborghini
+          Miura.
         </Paragraph>
         <Paragraph>
-          First-hand handling notes from this wiki&apos;s own demo play sessions will be added here once
-          captured. Until then, treat real-world lookalike labels as reference context, not Sealime canon.
+          First-hand handling notes from this wiki&apos;s own demo play sessions
+          will be added here once captured. Until then, treat real-world
+          lookalike labels as reference context, not Sealime canon.
         </Paragraph>
 
         <H2 id="traffic">Confirmed NPC / Traffic Cars (Unplayable)</H2>
@@ -428,23 +455,27 @@ export function HeatwarpedCarsPage() {
           <li>Volkswagen Golf (2003)</li>
         </ul>
         <Paragraph>
-          These three appear in traffic/NPC contexts in current demo reporting and are not described as
-          player-drivable in that build. They help populate the streets of{' '}
-          <strong className="text-sand-100">Ratfield</strong>. Names and model years should be re-checked
-          against in-game labels when available.
+          These three appear in traffic/NPC contexts in current demo reporting
+          and are not described as player-drivable in that build. They help
+          populate the streets of{' '}
+          <strong className="text-sand-100">Ratfield</strong>. Names and model
+          years should be re-checked against in-game labels when available.
         </Paragraph>
 
         <H2 id="rumored">Rumored / Unidentified Cars</H2>
         <Paragraph>
-          At least <strong className="text-sand-100">5 more vehicles</strong> appear in Steam screenshots,
-          the Reveal Trailer, and community vehicle databases but are not yet named in official Sealime
-          materials. These entries cite the best available source frame — they are{' '}
-          <strong className="text-sand-100">not</strong> treated as a finished roster.
+          At least <strong className="text-sand-100">5 more vehicles</strong>{' '}
+          appear in Steam screenshots, the Reveal Trailer, and community vehicle
+          databases but are not yet named in official Sealime materials. These
+          entries cite the best available source frame — they are{' '}
+          <strong className="text-sand-100">not</strong> treated as a finished
+          roster.
         </Paragraph>
         <UnidentifiedCarsGallery />
         <Paragraph>
-          Tip: if you spot a clearer in-game nameplate or garage label for any of the above, send a
-          demo capture — we will promote it out of this unidentified list.
+          Tip: if you spot a clearer in-game nameplate or garage label for any
+          of the above, send a demo capture — we will promote it out of this
+          unidentified list.
         </Paragraph>
 
         <H2 id="real-world">Heatwarped Cars vs. Real-Life Inspiration</H2>
@@ -465,10 +496,26 @@ export function HeatwarpedCarsPage() {
             </thead>
             <tbody>
               {[
-                ['Muira', 'Nissan 240SX / Lexus SC', 'No — fictional (reference only)'],
-                ['Ford F-150 (2004)', 'Ford F-150', 'Traffic only (unconfirmed license claim)'],
-                ['Ford Focus (2008)', 'Ford Focus', 'Traffic only (unconfirmed license claim)'],
-                ['Volkswagen Golf (2003)', 'Volkswagen Golf', 'Traffic only (unconfirmed license claim)'],
+                [
+                  'Muira',
+                  'Nissan 240SX / Lexus SC',
+                  'No — fictional (reference only)',
+                ],
+                [
+                  'Ford F-150 (2004)',
+                  'Ford F-150',
+                  'Traffic only (unconfirmed license claim)',
+                ],
+                [
+                  'Ford Focus (2008)',
+                  'Ford Focus',
+                  'Traffic only (unconfirmed license claim)',
+                ],
+                [
+                  'Volkswagen Golf (2003)',
+                  'Volkswagen Golf',
+                  'Traffic only (unconfirmed license claim)',
+                ],
               ].map(([car, inspiration, licensed]) => (
                 <tr key={car} className="border-camo-800 border-t">
                   <td className="text-sand-100 px-4 py-3 font-medium">{car}</td>
@@ -480,19 +527,26 @@ export function HeatwarpedCarsPage() {
           </table>
         </div>
         <Paragraph>
-          Takeaway for readers: Heatwarped channels a late-90s / early-2000s tuner aesthetic often compared with
-          Need for Speed Underground, while hero cars discussed so far are framed as fictional homages. That is
-          different from racing games that publish a licensed real-world model list. Inspiration columns above are
-          community/reference labels unless Sealime confirms them.
+          Takeaway for readers: Heatwarped channels a late-90s / early-2000s
+          tuner aesthetic often compared with Need for Speed Underground, while
+          hero cars discussed so far are framed as fictional homages. That is
+          different from racing games that publish a licensed real-world model
+          list. Inspiration columns above are community/reference labels unless
+          Sealime confirms them.
         </Paragraph>
 
         <H2 id="setting">Why the Car List Matters: The Setting</H2>
         <Paragraph>
-          Heatwarped is set in <strong className="text-sand-100">Ratfield</strong>, described on the official site
-          as a large open world that stretches from a sparkling city to wide outskirts. Players customize cars and
-          chase street-racing fantasy in a 2000s setting. A free demo is available now on Steam; the full release
-          date remains TBA. For install steps, see the{' '}
-          <Link className="text-ember-400 underline underline-offset-4" href="/demo">
+          Heatwarped is set in{' '}
+          <strong className="text-sand-100">Ratfield</strong>, described on the
+          official site as a large open world that stretches from a sparkling
+          city to wide outskirts. Players customize cars and chase street-racing
+          fantasy in a 2000s setting. A free demo is available now on Steam; the
+          full release date remains TBA. For install steps, see the{' '}
+          <Link
+            className="text-ember-400 underline underline-offset-4"
+            href="/demo"
+          >
             Heatwarped demo guide
           </Link>
           .
@@ -508,9 +562,11 @@ export function HeatwarpedCarsPage() {
               Aug 27, 2026
             </time>
             <div className="text-bunker-200 text-sm leading-7">
-              Initial list: 1 playable (Muira) + 3 NPC traffic lookalikes + 5 unidentified sightings sourced
-              from IGCD captures, Steam screenshot ss_87b106…, and Reveal Trailer ≈0:52. Muira garage shot
-              hosted on R2. Real-world inspiration labeled as reference; full release kept as TBA.
+              Initial list: 1 playable (Muira) + 3 NPC traffic lookalikes + 5
+              unidentified sightings sourced from IGCD captures, Steam
+              screenshot ss_87b106…, and Reveal Trailer ≈0:52. Muira garage shot
+              hosted on R2. Real-world inspiration labeled as reference; full
+              release kept as TBA.
             </div>
           </div>
         </div>
@@ -518,7 +574,10 @@ export function HeatwarpedCarsPage() {
         <H2 id="faq">FAQ</H2>
         <div className="mt-5 space-y-4">
           {faqItems.map((item) => (
-            <section key={item.question} className="border-camo-800 bg-bunker-900/45 border p-5">
+            <section
+              key={item.question}
+              className="border-camo-800 bg-bunker-900/45 border p-5"
+            >
               <h3 className="font-display text-sand-100 text-lg tracking-wider uppercase">
                 {item.question}
               </h3>
@@ -542,11 +601,19 @@ export function HeatwarpedCarsPage() {
             Source policy
           </div>
           <div className="text-bunker-200">
-            Vehicle names and inspiration notes on this page mix demo/trailer observation with community and
-            media reference. They are not treated as a Sealime-published roster. Official product status still
-            comes from the <ExternalSource href={STEAM_URL}>Steam listing</ExternalSource> and{' '}
-            <ExternalSource href={OFFICIAL_SITE_URL}>heatwarped.com</ExternalSource>. See also the{' '}
-            <Link className="text-ember-400 underline underline-offset-4" href="/source-policy">
+            Vehicle names and inspiration notes on this page mix demo/trailer
+            observation with community and media reference. They are not treated
+            as a Sealime-published roster. Official product status still comes
+            from the{' '}
+            <ExternalSource href={STEAM_URL}>Steam listing</ExternalSource> and{' '}
+            <ExternalSource href={OFFICIAL_SITE_URL}>
+              heatwarped.com
+            </ExternalSource>
+            . See also the{' '}
+            <Link
+              className="text-ember-400 underline underline-offset-4"
+              href="/source-policy"
+            >
               source policy
             </Link>
             . Last updated {VERIFIED_DATE}.

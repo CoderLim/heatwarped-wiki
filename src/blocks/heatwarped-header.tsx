@@ -1,6 +1,6 @@
-import { MiniWarsHeader } from '@/components/miniwars/site-header';
+import { HeatwarpedHeader } from '@/components/heatwarped/site-header';
 
-export function MiniWarsHeaderBlock() {
+export function HeatwarpedHeaderBlock() {
   const navItems = [
     { href: '/release-date', label: 'Release Date' },
     { href: '/system-requirements', label: 'System Requirements' },
@@ -9,5 +9,5 @@ export function MiniWarsHeaderBlock() {
     { href: '/cars', label: 'Cars' },
   ];
 
-  return <MiniWarsHeader navItems={navItems} searchLabel="Search" />;
+  return <HeatwarpedHeader navItems={navItems} searchLabel="Search" />;
 }

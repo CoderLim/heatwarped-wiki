@@ -5,7 +5,7 @@ import { Link, usePathname } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { cn } from '@/lib/utils';
 
-export type MiniWarsNavItem = {
+export type HeatwarpedNavItem = {
   href: string;
   label: string;
 };
@@ -13,11 +13,11 @@ export type MiniWarsNavItem = {
 /** Scroll distance (px) over which the header fades from transparent → solid. */
 const SCROLL_FADE_RANGE = 96;
 
-export function MiniWarsHeader({
+export function HeatwarpedHeader({
   navItems,
   searchLabel: _searchLabel,
 }: {
-  navItems: MiniWarsNavItem[];
+  navItems: HeatwarpedNavItem[];
   /** Kept for callers; search UI is temporarily hidden. */
   searchLabel: string;
 }) {

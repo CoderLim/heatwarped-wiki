@@ -3,7 +3,7 @@ import type { ComponentType } from 'react';
 import { envConfigs } from '@/config';
 import { socialMetaTags } from '@/lib/seo-meta';
 import { getLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
-import { MiniWarsPageShell } from '@/components/miniwars/page-shell';
+import { HeatwarpedPageShell } from '@/components/heatwarped/page-shell';
 
 type HeatwarpedPageDef = {
   path: string;
@@ -65,9 +65,9 @@ export function heatwarpedPageRouteOptions({
     },
     component: function HeatwarpedRoutedPage() {
       return (
-        <MiniWarsPageShell>
+        <HeatwarpedPageShell>
           <Page />
-        </MiniWarsPageShell>
+        </HeatwarpedPageShell>
       );
     },
   };

@@ -1,11 +1,11 @@
-import { MiniWarsFooter } from '@/components/miniwars/site-footer';
+import { HeatwarpedFooter } from '@/components/heatwarped/site-footer';
 
 const STEAM_URL = 'https://store.steampowered.com/app/4846360/Heatwarped/';
 const X_URL = 'https://x.com/Heatwarped';
 
-export function MiniWarsFooterBlock() {
+export function HeatwarpedFooterBlock() {
   return (
-    <MiniWarsFooter
+    <HeatwarpedFooter
       blurb="Independent Heatwarped reference focused on verified Steam and developer information. Unconfirmed release dates, platforms, cars, and features are intentionally not presented as fact."
       disclaimer="UNOFFICIAL FAN-MADE WIKI · NOT AFFILIATED WITH SEALIME"
       codexTitle="Guides"

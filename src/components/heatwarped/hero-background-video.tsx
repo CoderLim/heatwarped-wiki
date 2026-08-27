@@ -1,5 +1,5 @@
-import { Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
 
 const R2_PUBLIC_ORIGIN = 'https://static.heatwarped.wiki';
 
@@ -16,7 +16,10 @@ type HeroBackgroundVideoProps = {
   posterSrc: string;
 };
 
-export function HeroBackgroundVideo({ videoSrc, posterSrc }: HeroBackgroundVideoProps) {
+export function HeroBackgroundVideo({
+  videoSrc,
+  posterSrc,
+}: HeroBackgroundVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldPlay, setShouldPlay] = useState(false);
   const [muted, setMuted] = useState(true);
@@ -94,11 +97,17 @@ export function HeroBackgroundVideo({ videoSrc, posterSrc }: HeroBackgroundVideo
         <button
           type="button"
           onClick={toggleMute}
-          aria-label={muted ? 'Unmute background video' : 'Mute background video'}
+          aria-label={
+            muted ? 'Unmute background video' : 'Mute background video'
+          }
           aria-pressed={!muted}
           className="border-camo-700/80 bg-bunker-950/70 text-sand-100 hover:border-ember-500/70 hover:text-ember-400 absolute right-4 bottom-4 z-20 inline-flex h-10 w-10 items-center justify-center border backdrop-blur-sm transition-colors md:right-6 md:bottom-6"
         >
-          {muted ? <VolumeX className="h-4 w-4" aria-hidden="true" /> : <Volume2 className="h-4 w-4" aria-hidden="true" />}
+          {muted ? (
+            <VolumeX className="h-4 w-4" aria-hidden="true" />
+          ) : (
+            <Volume2 className="h-4 w-4" aria-hidden="true" />
+          )}
         </button>
       ) : null}
     </>

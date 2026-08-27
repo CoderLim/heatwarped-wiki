@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { heatwarpedPageRouteOptions } from '@/components/miniwars/heatwarped-page-route';
-import { HeatwarpedSystemRequirementsPage } from '@/components/miniwars/pages/heatwarped-content-pages';
+import { heatwarpedPageRouteOptions } from '@/components/heatwarped/heatwarped-page-route';
+import { HeatwarpedSystemRequirementsPage } from '@/components/heatwarped/pages/heatwarped-content-pages';
 
 export const Route = createFileRoute('/system-requirements')(
   heatwarpedPageRouteOptions({

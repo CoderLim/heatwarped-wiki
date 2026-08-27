@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { heatwarpedPageRouteOptions } from '@/components/miniwars/heatwarped-page-route';
-import { HomePage } from '@/components/miniwars/pages';
+import { heatwarpedPageRouteOptions } from '@/components/heatwarped/heatwarped-page-route';
+import { HomePage } from '@/components/heatwarped/pages';
 
 export const Route = createFileRoute('/')(
   heatwarpedPageRouteOptions({
