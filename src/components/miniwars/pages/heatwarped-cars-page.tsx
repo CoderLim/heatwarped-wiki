@@ -1,4 +1,5 @@
-import { ArrowRight, ExternalLink, Info } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowRight, ExternalLink, Info, X } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
 
@@ -8,8 +9,65 @@ const R2_PUBLIC_ORIGIN = 'https://static.heatwarped.wiki';
 const MUIRA_GARAGE_IMAGE = import.meta.env.PROD
   ? `${R2_PUBLIC_ORIGIN}/heatwarped/cars/muira-garage.jpg`
   : '/imgs/cars/muira-garage.jpg';
+const carImg = (path: string) =>
+  import.meta.env.PROD ? `${R2_PUBLIC_ORIGIN}/heatwarped/cars/${path}` : `/imgs/cars/${path}`;
 const VERIFIED_DATE = 'August 27, 2026';
 const MODIFIED_DATE = '2026-08-27';
+const REVEAL_TRAILER_HLS =
+  'https://video.akamai.steamstatic.com/store_trailers/4846360/581959178/fd4e98a483bceaa95cc9954169fb038f7f2951b1/1787246468/hls_264_master.m3u8';
+
+const unidentifiedCars = [
+  {
+    id: 1,
+    label: 'Boxy dark-blue coupe (traffic)',
+    classLabel: 'Coupe · unplayable',
+    source:
+      'Community capture catalogued on IGCD as Heatwarped unknown (vehicle 416198). Boxy late-70s/80s coupe silhouette in open-world traffic.',
+    href: 'https://www.igcd.net/vehicle.php?id=416198',
+    image: 'unknown/01-boxy-coupe.jpg',
+    alt: 'Unidentified dark blue boxy coupe traffic car in Heatwarped',
+  },
+  {
+    id: 2,
+    label: 'Red van / MPV (traffic)',
+    classLabel: 'Van / MPV · unplayable',
+    source:
+      'Community capture catalogued on IGCD as Heatwarped unknown (vehicle 416199). Dark-red minivan/MPV used as street traffic.',
+    href: 'https://www.igcd.net/vehicle.php?id=416199',
+    image: 'unknown/02-red-mpv.jpg',
+    alt: 'Unidentified red van MPV traffic car in Heatwarped',
+  },
+  {
+    id: 3,
+    label: 'Purple AI racer (race field)',
+    classLabel: 'Sports coupe · opponent / AI',
+    source:
+      'Official Steam screenshot ss_87b106… — purple sports coupe ahead of the player Muira on a wet city corner with neon turn arrows.',
+    href: STEAM_URL,
+    image: 'unknown/03-purple-ai-racer.jpg',
+    alt: 'Unidentified purple sports coupe AI racer in a Heatwarped Steam screenshot',
+  },
+  {
+    id: 4,
+    label: 'Dark cargo van (under overpass)',
+    classLabel: 'Cargo van · traffic',
+    source:
+      'Heatwarped Reveal Trailer ≈ 0:52 — rear view of a tall boxy cargo van under a lit concrete overpass on wet asphalt.',
+    href: REVEAL_TRAILER_HLS,
+    image: 'unknown/04-overpass-van.jpg',
+    alt: 'Unidentified dark cargo van under an overpass in the Heatwarped reveal trailer',
+  },
+  {
+    id: 5,
+    label: 'Grey armored / utility van',
+    classLabel: 'Utility van · unplayable (listed unknown)',
+    source:
+      'IGCD lists this capture as an unknown Heatwarped vehicle (vehicle 416767 in search index). Grey boxy van with roof lamps — treat as unconfirmed community ID until re-verified in-demo.',
+    href: 'https://www.igcd.net/vehicle.php?id=416767',
+    image: 'unknown/05-armored-van.jpg',
+    alt: 'Unidentified grey armored utility van associated with Heatwarped traffic',
+  },
+] as const;
 
 function ExternalSource({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -72,6 +130,102 @@ const faqItems = [
       'The full Heatwarped release date remains TBA on the official Steam listing. This page does not assign a 2026 or 2027 launch window without a Sealime announcement.',
   },
 ] as const;
+
+function UnidentifiedCarsGallery() {
+  const [activeId, setActiveId] = useState<number | null>(null);
+  const active = unidentifiedCars.find((car) => car.id === activeId) ?? null;
+
+  useEffect(() => {
+    if (activeId == null) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setActiveId(null);
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [activeId]);
+
+  return (
+    <>
+      <div className="mt-6 space-y-6">
+        {unidentifiedCars.map((car) => (
+          <section
+            key={car.id}
+            className="border-camo-800 bg-bunker-900/45 grid gap-4 border p-4 md:grid-cols-[14rem_1fr] md:p-5"
+          >
+            <figure className="border-camo-800 overflow-hidden border bg-bunker-950">
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in text-left"
+                onClick={() => setActiveId(car.id)}
+                aria-label={`Enlarge ${car.label}`}
+              >
+                <img
+                  src={carImg(car.image)}
+                  alt={car.alt}
+                  width={640}
+                  height={360}
+                  className="aspect-video h-auto w-full object-cover transition duration-200 group-hover:scale-[1.02]"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent px-2 py-2 font-mono text-[10px] tracking-widest text-sand-100/90 uppercase opacity-0 transition group-hover:opacity-100">
+                  Click to enlarge
+                </span>
+              </button>
+            </figure>
+            <div>
+              <div className="text-ember-400 font-mono text-[11px] tracking-widest uppercase">
+                Unknown #{car.id} · {car.classLabel}
+              </div>
+              <h3 className="font-display text-sand-100 mt-2 text-xl tracking-wider uppercase">
+                {car.label}
+              </h3>
+              <p className="text-bunker-300 mt-2 text-sm leading-7">{car.source}</p>
+              <a
+                className="text-ember-400 hover:text-ember-300 mt-3 inline-flex items-center gap-1 text-sm underline underline-offset-4"
+                href={car.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open source <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      {active ? (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.label}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+          onClick={() => setActiveId(null)}
+        >
+          <button
+            type="button"
+            className="text-sand-100 hover:bg-bunker-800 absolute top-4 right-4 inline-flex h-10 w-10 items-center justify-center border border-camo-700 bg-bunker-950/80"
+            aria-label="Close enlarged image"
+            onClick={() => setActiveId(null)}
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={carImg(active.image)}
+            alt={active.alt}
+            className="max-h-[90vh] max-w-[min(96vw,80rem)] object-contain"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      ) : null}
+    </>
+  );
+}
 
 export function HeatwarpedCarsPage() {
   const itemListSchema = JSON.stringify({
@@ -282,29 +436,16 @@ export function HeatwarpedCarsPage() {
 
         <H2 id="rumored">Rumored / Unidentified Cars</H2>
         <Paragraph>
-          At least <strong className="text-sand-100">5 more vehicles</strong> have been spotted in trailers
-          and screenshots but remain unidentified. This section is updated as models are confirmed. Entries
-          below are placeholders for source notes (trailer timestamp, screenshot, or demo capture) — they are{' '}
-          <strong className="text-sand-100">not</strong> treated as official roster facts.
+          At least <strong className="text-sand-100">5 more vehicles</strong> appear in Steam screenshots,
+          the Reveal Trailer, and community vehicle databases but are not yet named in official Sealime
+          materials. These entries cite the best available source frame — they are{' '}
+          <strong className="text-sand-100">not</strong> treated as a finished roster.
         </Paragraph>
-        <ul className="text-bunker-200 mt-4 list-disc space-y-2 pl-6 text-base leading-8">
-          <li>
-            Unidentified vehicle #1 —{' '}
-            <em className="text-camo-300">source pending (trailer / screenshot)</em>
-          </li>
-          <li>
-            Unidentified vehicle #2 — <em className="text-camo-300">source pending</em>
-          </li>
-          <li>
-            Unidentified vehicle #3 — <em className="text-camo-300">source pending</em>
-          </li>
-          <li>
-            Unidentified vehicle #4 — <em className="text-camo-300">source pending</em>
-          </li>
-          <li>
-            Unidentified vehicle #5 — <em className="text-camo-300">source pending</em>
-          </li>
-        </ul>
+        <UnidentifiedCarsGallery />
+        <Paragraph>
+          Tip: if you spot a clearer in-game nameplate or garage label for any of the above, send a
+          demo capture — we will promote it out of this unidentified list.
+        </Paragraph>
 
         <H2 id="real-world">Heatwarped Cars vs. Real-Life Inspiration</H2>
         <div className="border-camo-800 mt-5 overflow-x-auto border">
@@ -367,9 +508,9 @@ export function HeatwarpedCarsPage() {
               Aug 27, 2026
             </time>
             <div className="text-bunker-200 text-sm leading-7">
-              Initial list structure: 1 playable + 3 NPC traffic cars + 5 unidentified trailer slots. Added
-              official Steam Muira garage screenshot (Body Kit). Real-world inspiration labeled as reference;
-              full release kept as TBA.
+              Initial list: 1 playable (Muira) + 3 NPC traffic lookalikes + 5 unidentified sightings sourced
+              from IGCD captures, Steam screenshot ss_87b106…, and Reveal Trailer ≈0:52. Muira garage shot
+              hosted on R2. Real-world inspiration labeled as reference; full release kept as TBA.
             </div>
           </div>
         </div>
