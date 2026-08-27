@@ -16,6 +16,7 @@ export function MiniWarsFooterBlock() {
         { href: '/system-requirements', label: 'System Requirements' },
         { href: '/demo', label: 'Demo Guide' },
         { href: '/gameplay', label: 'Gameplay Overview' },
+        { href: '/cars', label: 'Car List' },
       ]}
       playerLinks={[
         { href: STEAM_URL, label: 'Steam Store Page', external: true },

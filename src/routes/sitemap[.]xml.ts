@@ -10,6 +10,7 @@ const STATIC_PATHS = [
   '/system-requirements',
   '/demo',
   '/gameplay',
+  '/cars',
   '/source-policy',
   '/privacy-policy',
   '/terms-of-service',

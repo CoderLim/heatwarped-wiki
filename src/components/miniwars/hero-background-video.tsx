@@ -1,7 +1,7 @@
 import { Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-const R2_PUBLIC_ORIGIN = 'https://pub-38a1951be93e45bc90617fcb1e313746.r2.dev';
+const R2_PUBLIC_ORIGIN = 'https://static.heatwarped.wiki';
 
 export const HEATWARPED_HERO_VIDEO = import.meta.env.PROD
   ? `${R2_PUBLIC_ORIGIN}/heatwarped/hero-bg.mp4`

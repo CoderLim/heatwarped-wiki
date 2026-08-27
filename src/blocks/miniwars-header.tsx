@@ -6,6 +6,7 @@ export function MiniWarsHeaderBlock() {
     { href: '/system-requirements', label: 'System Requirements' },
     { href: '/demo', label: 'Demo' },
     { href: '/gameplay', label: 'Gameplay' },
+    { href: '/cars', label: 'Cars' },
   ];
 
   return <MiniWarsHeader navItems={navItems} searchLabel="Search" />;
