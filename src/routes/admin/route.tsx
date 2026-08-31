@@ -9,10 +9,14 @@ import {
 } from 'lucide-react';
 
 import { envConfigs } from '@/config';
+import { NOINDEX_META } from '@/lib/seo-meta';
 import { m } from '@/paraglide/messages.js';
 import { AppLayout } from '@/components/app-layout';
 
 export const Route = createFileRoute('/admin')({
+  head: () => ({
+    meta: [...NOINDEX_META],
+  }),
   component: AdminLayout,
 });
 

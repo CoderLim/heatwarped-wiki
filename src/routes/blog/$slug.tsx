@@ -4,9 +4,9 @@ import { ArrowLeft, Calendar } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
-import { socialMetaTags } from '@/lib/seo-meta';
+import { hreflangLinks, socialMetaTags } from '@/lib/seo-meta';
 import { m } from '@/paraglide/messages.js';
-import { getLocale, localizeUrl } from '@/paraglide/runtime.js';
+import { getLocale } from '@/paraglide/runtime.js';
 import { Footer } from '@/blocks/footer';
 import { Header } from '@/blocks/header';
 import { MarkdownContent } from '@/components/markdown-content';
@@ -38,9 +38,9 @@ export const Route = createFileRoute('/blog/$slug')({
     if (!loaderData) return {};
     const { locale, post } = loaderData;
     const title = `${post.title} | ${envConfigs.app_name}`;
-    const canonical = localizeUrl(`${envConfigs.app_url}/blog/${post.slug}`, {
-      locale: locale as any,
-    }).href;
+    const canonical = hreflangLinks(`/blog/${post.slug}`, locale).find(
+      (link) => link.rel === 'canonical'
+    )!.href;
     return {
       meta: [
         { title },
@@ -52,7 +52,7 @@ export const Route = createFileRoute('/blog/$slug')({
           type: 'article',
         }),
       ],
-      links: [{ rel: 'canonical', href: canonical }],
+      links: hreflangLinks(`/blog/${post.slug}`, locale),
     };
   },
   component: BlogPostPage,
@@ -72,7 +72,7 @@ function BlogPostPage() {
       <main className="flex-1 px-6 py-12 md:px-8 md:py-16">
         <article className="mx-auto max-w-3xl">
           <Link
-            href="/blog"
+            href="/"
             className="text-muted-foreground hover:text-foreground inline-flex items-center gap-2 text-sm font-medium transition-colors"
           >
             <ArrowLeft className="size-4" />
@@ -112,6 +112,10 @@ function BlogPostPage() {
             <img
               src={post.image}
               alt={post.title}
+              width={1200}
+              height={630}
+              loading="lazy"
+              decoding="async"
               className="border-border mb-8 w-full rounded-2xl border object-cover"
             />
           )}

@@ -11,11 +11,15 @@ import {
 } from 'lucide-react';
 
 import { envConfigs } from '@/config';
+import { NOINDEX_META } from '@/lib/seo-meta';
 import { m } from '@/paraglide/messages.js';
 import { SupportWidget } from '@/blocks/support-widget';
 import { AppLayout } from '@/components/app-layout';
 
 export const Route = createFileRoute('/settings')({
+  head: () => ({
+    meta: [...NOINDEX_META],
+  }),
   component: SettingsLayout,
 });
 

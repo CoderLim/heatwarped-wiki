@@ -1,8 +1,7 @@
 import type { ComponentType } from 'react';
 
-import { envConfigs } from '@/config';
-import { socialMetaTags } from '@/lib/seo-meta';
-import { getLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
+import { hreflangLinks, socialMetaTags } from '@/lib/seo-meta';
+import { getLocale } from '@/paraglide/runtime.js';
 import { HeatwarpedPageShell } from '@/components/heatwarped/page-shell';
 
 type HeatwarpedPageDef = {
@@ -26,11 +25,9 @@ export function heatwarpedPageRouteOptions({
       loaderData?: { locale: string; title: string; description: string };
     }) => {
       const locale = loaderData?.locale ?? 'en';
-      const urlFor = (loc: string) =>
-        localizeUrl(`${envConfigs.app_url}${path === '/' ? '/' : path}`, {
-          locale: loc as 'en' | 'zh',
-        }).href;
-      const canonical = urlFor(locale);
+      const canonical = hreflangLinks(path, locale).find(
+        (link) => link.rel === 'canonical'
+      )!.href;
 
       return {
         meta: loaderData
@@ -44,23 +41,7 @@ export function heatwarpedPageRouteOptions({
               }),
             ]
           : [],
-        links: [
-          { rel: 'canonical', href: canonical },
-          ...locales.map((loc) => ({
-            rel: 'alternate',
-            hrefLang: loc,
-            href: urlFor(loc),
-          })),
-          ...(path === '/'
-            ? [
-                {
-                  rel: 'alternate' as const,
-                  hrefLang: 'x-default',
-                  href: urlFor('en'),
-                },
-              ]
-            : []),
-        ],
+        links: hreflangLinks(path, locale),
       };
     },
     component: function HeatwarpedRoutedPage() {

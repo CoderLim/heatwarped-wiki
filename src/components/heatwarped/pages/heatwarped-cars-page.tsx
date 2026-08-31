@@ -228,6 +228,8 @@ function UnidentifiedCarsGallery() {
           <img
             src={carImg(active.image)}
             alt={active.alt}
+            width={1280}
+            height={720}
             className="max-h-[90vh] max-w-[min(96vw,80rem)] object-contain"
             onClick={(event) => event.stopPropagation()}
           />

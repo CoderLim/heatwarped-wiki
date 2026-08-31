@@ -1,15 +1,9 @@
 import type { ComponentType } from 'react';
 import { notFound, useLoaderData } from '@tanstack/react-router';
 
-import { envConfigs } from '@/config';
-import { socialMetaTags } from '@/lib/seo-meta';
+import { hreflangLinks, socialMetaTags } from '@/lib/seo-meta';
 import { m } from '@/paraglide/messages.js';
-import {
-  baseLocale,
-  getLocale,
-  locales,
-  localizeUrl,
-} from '@/paraglide/runtime.js';
+import { baseLocale, getLocale } from '@/paraglide/runtime.js';
 
 type PageMeta = {
   title: string;
@@ -53,11 +47,9 @@ export function staticPageRouteOptions(slug: string) {
     head: ({ loaderData }: { loaderData?: LoaderData }) => {
       if (!loaderData) return {};
       const { meta, locale, slug: pageSlug } = loaderData;
-      const urlFor = (loc: string) =>
-        localizeUrl(`${envConfigs.app_url}/${pageSlug}`, {
-          locale: loc as ReturnType<typeof getLocale>,
-        }).href;
-      const canonical = urlFor(locale);
+      const canonical = hreflangLinks(`/${pageSlug}`, locale).find(
+        (link) => link.rel === 'canonical'
+      )!.href;
       return {
         meta: [
           { title: meta.title },
@@ -68,14 +60,7 @@ export function staticPageRouteOptions(slug: string) {
             url: canonical,
           }),
         ],
-        links: [
-          { rel: 'canonical', href: canonical },
-          ...locales.map((loc) => ({
-            rel: 'alternate',
-            hrefLang: loc,
-            href: urlFor(loc),
-          })),
-        ],
+        links: hreflangLinks(`/${pageSlug}`, locale),
       };
     },
     component: StaticPage,

@@ -12,6 +12,13 @@ export const Route = createFileRoute('/robots.txt')({
           'Disallow: /admin',
           'Disallow: /settings',
           'Disallow: /api/',
+          'Disallow: /sign-in',
+          'Disallow: /sign-up',
+          'Disallow: /forgot-password',
+          'Disallow: /reset-password',
+          'Disallow: /verify-email',
+          'Disallow: /auth-callback',
+          'Disallow: /redeem-invite',
           'Disallow: /*?*',
           // Retired template surfaces (also 301 to /)
           'Disallow: /blog/what-is-shipany',
