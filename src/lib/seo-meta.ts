@@ -9,16 +9,32 @@ export const NOINDEX_META = [
   { name: 'robots', content: 'noindex, nofollow' },
 ] as const;
 
+type LocaleCode = (typeof locales)[number];
+
+export type HreflangOptions = {
+  /** Locales with real translated content for this path. Defaults to all project locales. */
+  locales?: readonly LocaleCode[];
+};
+
 /** Canonical + hreflang alternates (including x-default) for a locale-free path. */
-export function hreflangLinks(path: string, locale: string) {
+export function hreflangLinks(
+  path: string,
+  locale: string,
+  options?: HreflangOptions
+) {
+  const alternateLocales = options?.locales ?? locales;
+  const canonicalLocale = alternateLocales.includes(locale as LocaleCode)
+    ? (locale as LocaleCode)
+    : baseLocale;
+
   const urlFor = (loc: string) =>
     localizeUrl(`${envConfigs.app_url}${path === '/' ? '/' : path}`, {
-      locale: loc as (typeof locales)[number],
+      locale: loc as LocaleCode,
     }).href;
 
   return [
-    { rel: 'canonical' as const, href: urlFor(locale) },
-    ...locales.map((loc) => ({
+    { rel: 'canonical' as const, href: urlFor(canonicalLocale) },
+    ...alternateLocales.map((loc) => ({
       rel: 'alternate' as const,
       hrefLang: loc,
       href: urlFor(loc),
@@ -30,6 +46,11 @@ export function hreflangLinks(path: string, locale: string) {
     },
   ];
 }
+
+/** hreflang for English-only pages (guides without zh translations). */
+export const ENGLISH_ONLY_HREFLANG: HreflangOptions = {
+  locales: [baseLocale],
+};
 
 export function absoluteUrl(path: string): string {
   const base = envConfigs.app_url.replace(/\/$/, '');

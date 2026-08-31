@@ -1,7 +1,12 @@
 import type { ComponentType } from 'react';
 
-import { hreflangLinks, socialMetaTags } from '@/lib/seo-meta';
-import { getLocale } from '@/paraglide/runtime.js';
+import { getHeatwarpedPageSeo } from '@/lib/heatwarped-seo';
+import {
+  ENGLISH_ONLY_HREFLANG,
+  hreflangLinks,
+  socialMetaTags,
+} from '@/lib/seo-meta';
+import { baseLocale, getLocale } from '@/paraglide/runtime.js';
 import { HeatwarpedPageShell } from '@/components/heatwarped/page-shell';
 
 type HeatwarpedPageDef = {
@@ -17,6 +22,8 @@ export function heatwarpedPageRouteOptions({
   description,
   Page,
 }: HeatwarpedPageDef) {
+  const pageSeo = getHeatwarpedPageSeo(path);
+
   return {
     loader: () => ({ locale: getLocale(), title, description }),
     head: ({
@@ -24,8 +31,8 @@ export function heatwarpedPageRouteOptions({
     }: {
       loaderData?: { locale: string; title: string; description: string };
     }) => {
-      const locale = loaderData?.locale ?? 'en';
-      const canonical = hreflangLinks(path, locale).find(
+      const locale = loaderData?.locale ?? baseLocale;
+      const canonical = hreflangLinks(path, locale, ENGLISH_ONLY_HREFLANG).find(
         (link) => link.rel === 'canonical'
       )!.href;
 
@@ -38,10 +45,11 @@ export function heatwarpedPageRouteOptions({
                 title: loaderData.title,
                 description: loaderData.description,
                 url: canonical,
+                image: pageSeo.ogImage,
               }),
             ]
           : [],
-        links: hreflangLinks(path, locale),
+        links: hreflangLinks(path, locale, ENGLISH_ONLY_HREFLANG),
       };
     },
     component: function HeatwarpedRoutedPage() {

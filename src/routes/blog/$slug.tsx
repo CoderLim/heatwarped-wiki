@@ -4,7 +4,11 @@ import { ArrowLeft, Calendar } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
-import { hreflangLinks, socialMetaTags } from '@/lib/seo-meta';
+import {
+  ENGLISH_ONLY_HREFLANG,
+  hreflangLinks,
+  socialMetaTags,
+} from '@/lib/seo-meta';
 import { m } from '@/paraglide/messages.js';
 import { getLocale } from '@/paraglide/runtime.js';
 import { Footer } from '@/blocks/footer';
@@ -38,9 +42,11 @@ export const Route = createFileRoute('/blog/$slug')({
     if (!loaderData) return {};
     const { locale, post } = loaderData;
     const title = `${post.title} | ${envConfigs.app_name}`;
-    const canonical = hreflangLinks(`/blog/${post.slug}`, locale).find(
-      (link) => link.rel === 'canonical'
-    )!.href;
+    const canonical = hreflangLinks(
+      `/blog/${post.slug}`,
+      locale,
+      ENGLISH_ONLY_HREFLANG
+    ).find((link) => link.rel === 'canonical')!.href;
     return {
       meta: [
         { title },
@@ -50,9 +56,10 @@ export const Route = createFileRoute('/blog/$slug')({
           description: post.description || '',
           url: canonical,
           type: 'article',
+          image: post.image,
         }),
       ],
-      links: hreflangLinks(`/blog/${post.slug}`, locale),
+      links: hreflangLinks(`/blog/${post.slug}`, locale, ENGLISH_ONLY_HREFLANG),
     };
   },
   component: BlogPostPage,

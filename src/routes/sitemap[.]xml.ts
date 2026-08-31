@@ -1,48 +1,52 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { envConfigs } from '@/config';
+import {
+  getHeatwarpedPageSeo,
+  HEATWARPED_GUIDE_PATHS,
+  LOCALIZED_STATIC_PATHS,
+} from '@/lib/heatwarped-seo';
 import { baseLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
 import { getLocalPosts, mergePosts } from '@/content/posts';
 
-const STATIC_PATHS = [
-  '',
-  '/release-date',
-  '/system-requirements',
-  '/demo',
-  '/gameplay',
-  '/race-modes',
-  '/map',
-  '/customization',
-  '/multiplayer',
-  '/performance',
-  '/cars',
-  '/about',
-  '/contact',
-  '/source-policy',
-  '/privacy-policy',
-  '/terms-of-service',
-];
+type LocaleCode = (typeof locales)[number];
 
 type Entry = {
   path: string;
   lastModified?: string;
   changeFrequency: string;
   priority: number;
+  /** hreflang locales for this URL. Guides are English-only. */
+  hreflangLocales: readonly LocaleCode[];
 };
+
+type StaticPageMeta = { updated_at: string };
+
+const staticPageModules = import.meta.glob<{ meta: StaticPageMeta }>(
+  '/src/content/pages/*.en.mdx',
+  { eager: true }
+);
+
+function staticPageLastMod(slug: string): string | undefined {
+  const mod = staticPageModules[`/src/content/pages/${slug}.en.mdx`];
+  return mod?.meta.updated_at;
+}
 
 function urlFor(path: string, locale: string): string {
   return localizeUrl(`${envConfigs.app_url}${path || '/'}`, {
-    locale: locale as (typeof locales)[number],
+    locale: locale as LocaleCode,
   }).href;
 }
 
 function entryXml(e: Entry): string {
-  const alternates = locales
-    .map(
+  const alternates = [
+    ...e.hreflangLocales.map(
       (loc) =>
         `    <xhtml:link rel="alternate" hreflang="${loc}" href="${urlFor(e.path, loc)}"/>`
-    )
-    .join('\n');
+    ),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor(e.path, baseLocale)}"/>`,
+  ].join('\n');
+
   return [
     '  <url>',
     `    <loc>${urlFor(e.path, baseLocale)}</loc>`,
@@ -60,11 +64,22 @@ export const Route = createFileRoute('/sitemap.xml')({
   server: {
     handlers: {
       GET: async () => {
-        const entries: Entry[] = STATIC_PATHS.map((path) => ({
-          path,
-          changeFrequency: path === '/blog' ? 'daily' : 'weekly',
-          priority: path === '' ? 1 : 0.8,
-        }));
+        const entries: Entry[] = [
+          ...HEATWARPED_GUIDE_PATHS.map((path) => ({
+            path,
+            lastModified: getHeatwarpedPageSeo(path).lastModified,
+            changeFrequency: 'weekly',
+            priority: path === '' ? 1 : 0.8,
+            hreflangLocales: [baseLocale] as const,
+          })),
+          ...LOCALIZED_STATIC_PATHS.map((path) => ({
+            path,
+            lastModified: staticPageLastMod(path.slice(1)),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+            hreflangLocales: locales,
+          })),
+        ];
 
         // Blog posts: db posts merged with local MDX posts.
         try {
@@ -82,19 +97,20 @@ export const Route = createFileRoute('/sitemap.xml')({
           for (const post of posts) {
             entries.push({
               path: `/blog/${post.slug}`,
-              lastModified: post.createdAt,
+              lastModified: post.createdAt.slice(0, 10),
               changeFrequency: 'monthly',
               priority: 0.6,
+              hreflangLocales: [baseLocale],
             });
           }
         } catch {
-          // Database unreachable — static paths + local posts still listed.
           for (const post of getLocalPosts(baseLocale)) {
             entries.push({
               path: `/blog/${post.slug}`,
-              lastModified: post.createdAt,
+              lastModified: post.createdAt.slice(0, 10),
               changeFrequency: 'monthly',
               priority: 0.6,
+              hreflangLocales: [baseLocale],
             });
           }
         }

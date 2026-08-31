@@ -1,6 +1,11 @@
 import handler from '@tanstack/react-start/server-entry';
 
 import { getCookieFromHeader } from './lib/cookie';
+import {
+  HEATWARPED_GUIDE_PATHS,
+  heatwarpedPathKey,
+} from './lib/heatwarped-seo';
+import { deLocalizeUrl } from './paraglide/runtime.js';
 import { paraglideMiddleware } from './paraglide/server.js';
 
 // On Cloudflare Workers, stash the binding env (D1, ASSETS, …) on globalThis
@@ -10,6 +15,25 @@ import { paraglideMiddleware } from './paraglide/server.js';
 // outside workerd the import rejects and we just move on.
 const CF_WORKERS_MODULE = 'cloudflare:workers';
 let cfEnvPromise: Promise<void> | null = null;
+
+const ENGLISH_ONLY_PATHS = new Set<string>([
+  ...HEATWARPED_GUIDE_PATHS.map(heatwarpedPathKey),
+]);
+
+function englishOnlyRedirectTarget(url: URL): string | null {
+  const pathname = url.pathname;
+  if (!pathname.startsWith('/zh')) return null;
+
+  const delocalized = deLocalizeUrl(url).pathname || '/';
+  const path = heatwarpedPathKey(
+    delocalized.startsWith('/') ? delocalized : `/${delocalized}`
+  );
+
+  if (ENGLISH_ONLY_PATHS.has(path)) return path;
+  if (path.startsWith('/blog/')) return path;
+
+  return null;
+}
 
 function ensureCloudflareEnv(): Promise<void> {
   if (!cfEnvPromise) {
@@ -29,8 +53,17 @@ function ensureCloudflareEnv(): Promise<void> {
 export default {
   async fetch(req: Request): Promise<Response> {
     await ensureCloudflareEnv();
+
+    const url = new URL(req.url);
+    const redirectPath = englishOnlyRedirectTarget(url);
+    if (redirectPath) {
+      const target = new URL(redirectPath, url.origin);
+      target.search = url.search;
+      return Response.redirect(target.href, 301);
+    }
+
     const response = await paraglideMiddleware(req, () => handler.fetch(req));
-    const utmSource = new URL(req.url).searchParams.get('utm_source');
+    const utmSource = url.searchParams.get('utm_source');
     const existing = getCookieFromHeader(
       req.headers.get('cookie'),
       'utm_source'
