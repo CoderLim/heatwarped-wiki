@@ -62,8 +62,29 @@ export const Route = createRootRoute({
       { name: 'color-scheme', content: 'dark' },
     ],
     links: [
-      { rel: 'icon', href: '/favicon.png', type: 'image/png' },
-      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+      {
+        rel: 'icon',
+        href: '/icon-48.png',
+        type: 'image/png',
+        sizes: '48x48',
+      },
+      {
+        rel: 'icon',
+        href: '/favicon.png',
+        type: 'image/png',
+        sizes: '96x96',
+      },
+      {
+        rel: 'icon',
+        href: '/icon-192.png',
+        type: 'image/png',
+        sizes: '192x192',
+      },
+      {
+        rel: 'apple-touch-icon',
+        href: '/apple-touch-icon.png',
+        sizes: '180x180',
+      },
       { rel: 'manifest', href: '/seo/manifest.webmanifest' },
       {
         rel: 'preload',

@@ -1,8 +1,8 @@
 import { envConfigs } from '@/config';
 import { baseLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
 
-/** Default social card image (raster poster — better than SVG for crawlers). */
-export const DEFAULT_OG_IMAGE = '/videos/heatwarped-hero-bg-poster.jpg';
+/** Default social card image — red tuner + night city (shows a car in SERP). */
+export const DEFAULT_OG_IMAGE = '/imgs/guides/demo-open-world.webp';
 
 /** Meta tags for authenticated / dashboard routes that should not be indexed. */
 export const NOINDEX_META = [
